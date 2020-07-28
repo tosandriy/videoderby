@@ -1,0 +1,72 @@
+{% extends 'main.html' %}
+{% block content %}
+{% load static %}
+	<section class="page">
+		<div class="actor_info">
+			<button class="actor_like"><img src="{% static 'images/vectors/heart.png' %}" alt=""></button>
+
+			<img src="{{actor.photo.url}}" height="300px" width="200px" alt="" class="actor_info_img">
+			<div class="actor_info_text">
+				<div class="actor_desrc actor_name">{{actor.name}}</div>
+				<div class="actor_desrc actor_roles">Жанры: {% for genre in genres %}{{genre}}, {% endfor %}{{last_genre}}</div>
+				<div class="actor_desrc">Родился: <span><span class="actor_old" id="CillianMurphy_old">{{birth_day.day_month}}, {{birth_day.year}}</span>  </span></div>
+				<div class="actor_desrc">Место рождения: <span>{% for place in place_of_birth %}{{ place }} {% endfor %}</span></div>
+				<div class="actor_desrc">Всего фильмов: <span><span class="actor_films_quantity" id="CillianMurphy_films_quantity">{{movie_count}}</span></span></div>
+				<div class="actor_desrc">Рост: <span>{{height}}</span></div>
+			</div>
+			<div class="actor_rating">Рейтинг актёра:  <span class="actor_rating_num">{{avg_rating}}</span> / <span>10</span></div>
+		</div>
+
+		<h2 class="popular_works">Популярные работы</h2>
+		<div class="line"></div>
+
+		<div class="slider actor_popular_works_slider">
+			{% for film in films %}
+			<a href="#" class="film_slide">
+				<img src="{{ film.poster.url }}" alt="" width="135" height="200">
+				<span class="film_slide_name">{{film.name}}</span>
+			</a>
+			{% endfor %}
+
+		</div>
+
+		<div class="line"></div>
+		
+
+
+		<div class="actor_photos">
+			<h2 class="actor_photos_title">Фото:</h2>
+
+			<div class="slider actor_photos_slider">
+				<div class="actor_photos_page">
+					{% for photo in photos %}
+					<img src="{{photo.image.url}}" height="300px" width="200px" alt="">
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+
+		<div class="all_works">
+			<h2 class="all_works_title">Все работы:</h2>
+
+			<div class="filter_sort">
+				<span>Сортировать по:</span>
+				<div class="sort_btns">
+					<button class="sort_btn">по популярности</button>
+					<button class="sort_btn">по рейтинку</button>
+					<button class="sort_btn">по отзывам</button>
+					<button class="sort_btn">по новизне</button>
+				</div>
+			</div>
+
+			<div class="all_works_list">
+				{% for film in all_films %}
+				<div class="all_works_film"><a href="#" class="all_works_film_link">{{film.name}}</a>
+				<span>{{ film.rating }}</span>/<span>10</span></div>
+				{% endfor %}
+			</div>
+
+			<h2 class="all_works_show_more" style="padding-bottom: 75px;"><a href="#" style="color: #CE0000;">Показать больше...</a></h2>
+		</div>
+	</section>
+{% endblock content %}
