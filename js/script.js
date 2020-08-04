@@ -124,3 +124,10 @@ function openTab(evt, tabName) {
 	document.getElementById(tabName).style.display = "flex";
 	evt.currentTarget.className += " button_tab_active"; 
 }
+
+
+$('.review_star').raty({
+	number: 5,
+	starOn: 'images/vectors/staron.png',
+	starOff: 'images/vectors/staroff.png'
+})

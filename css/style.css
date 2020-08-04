@@ -1395,3 +1395,8 @@ h2 {
 .all_reviews .line {
 	width: 90%;
 }
+
+.review_star img {
+	width: 30px;
+	height: 30px;
+}
