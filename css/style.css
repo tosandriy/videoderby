@@ -1400,3 +1400,30 @@ h2 {
 	width: 30px;
 	height: 30px;
 }
+.rating .stars .star {
+  float: left;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+
+.rating .stars .star{
+  background: url(../images/vectors/staroff.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.rating .stars .star:hover,
+.rating .stars .star.to_rate,
+.rating .stars .star.rated{
+  background: url(../images/vectors/staron.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.rating .stars .star.no_to_rate {
+  background: url(../images/vectors/staroff.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
