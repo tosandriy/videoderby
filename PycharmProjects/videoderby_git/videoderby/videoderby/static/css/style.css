@@ -19,6 +19,7 @@ body {
 	position: relative;
 	background: #fff;
 	height: 100%;
+	margin-top: 64px;
 	font-family: Roboto;
 	font-style: normal;
 }
@@ -45,6 +46,9 @@ h2 {
 .page__header {
 	background: #292626;
 	width: 100%;
+	position: fixed;
+	z-index: 9999;
+	top: 0
 }
 .header__content {
 	height: 64px;
@@ -305,14 +309,16 @@ h2 {
     height: 50px;
     z-index:10;
 }
-.slider-second .slick-prev, .slick-prev:hover, .slick-prev:focus {
+.slider-second .slick-prev {
     left: 60px;
-    background: url(../images/vectors/ArrowLeft.png)
+    background: url(../images/vectors/ArrowLeft.png);
+    background-size: cover;
 }
   
-.slider-second .slick-next, .slick-next:hover, .slick-next:focus {
+.slider-second .slick-next {
     right: 60px;
-    background: url(../images/vectors/ArrowRight.png)
+    background: url(../images/vectors/ArrowRight.png);
+    background-size: cover;
 }
 
 
@@ -599,18 +605,23 @@ h2 {
 .film-pages .slick-prev:before, .slick-next:before {
     display: none;
 }
-.film-pages .slick-prev, .slick-next {
+.film-pages .slick-prev {
     width: 14px;
     height: 14px;
     z-index:10;
 }
-.film-pages .slick-prev, .slick-prev:hover, .slick-prev:focus {
+.film-pages .slick-next {
+	width: 14px;
+    height: 14px;
+    z-index:10;
+}
+.film-pages .slick-prev {
     left: 40%;
     background: url(../images/vectors/ArrowLeftS.png);
     background-repeat: no-repeat;
 }
   
-.film-pages .slick-next, .slick-next:hover, .slick-next:focus {
+.film-pages .slick-next {
     right: 40%;
     background: url(../images/vectors/ArrowRightS.png);
     background-repeat: no-repeat;

@@ -1,7 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1b01866b-3814-40df-9107-83223588654c" name="Default Changelist" comment="" />
+    <list default="true" id="1b01866b-3814-40df-9107-83223588654c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/videoderby/videoderby/media/parsers/file.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/videoderby/videoderby/media/parsers/kp_parser.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/videoderby/videoderby/media/parsers/last_id.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/videoderby/videoderby/parser/result.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/videoderby/videoderby/static/js/player.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/videoderby/videoderby/templates/actor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/videoderby/videoderby/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/videoderby/videoderby/templates/film.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/videoderby/videoderby/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/videoderby/videoderby/templates/logout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/videoderby/videoderby/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoderby/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/videoderby/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoderby/fdffffff.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoderby/media/videoderby/media/images/filmPosters/1917.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoderby/media/videoderby/media/images/filmPosters/django.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoderby/media/videoderby/media/images/filmPosters/hollywood.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoderby/movies/LogoCenter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoderby/movies/sharp_ot_diktaturyi_k_demokratii.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoderby/movies/sharp_ot_diktaturyi_k_demokratii_UW53mru.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoderby/movies/Без_названия.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoderby/movies/Без_названия_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoderby/movies/Без_названия_2_U6XCNf6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoderby/movies/Без_названия_xwpEWSk.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoderby/movies/Биoлoгия_жeлaния._Зaвиcимocть__нe_бoлeзнь.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoderby/movies/Биoлoгия_жeлaния._Зaвиcимocть__нe_бoлeзнь_RKInu1e.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoderby/movies/Биoлoгия_жeлaния._Зaвиcимocть__нe_бoлeзнь_na8nv0j.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoderby/movies/Биoлoгия_жeлaния._Зaвиcимocть__нe_бoлeзнь_rFjloAY.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoderby/videoderby/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoderby/videoderby/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/videoderby/videoderby/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoderby/videoderby/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/videoderby/videoderby/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoderby/videoderby/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoderby/videoderby/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/videoderby/videoderby/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoderby/videoderby/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/videoderby/videoderby/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoderby/videoderby/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/videoderby/videoderby/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoderby/videoderby/static/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/videoderby/videoderby/static/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoderby/videoderby/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/videoderby/videoderby/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoderby/videoderby/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/videoderby/videoderby/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoderby/videoderby/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/videoderby/videoderby/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoderby/videoderby/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/videoderby/videoderby/views.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,44 +51,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/videoderby/videoderby/validators.py">
+        <entry file="file://$PROJECT_DIR$/videoderby/videoderby/templates/film.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/videoderby/videoderby/admin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/videoderby/videoderby/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-                <marker date="1595234117775" expanded="true" signature="851:944" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/videoderby/videoderby/templates/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="553">
-              <caret line="221" column="69" selection-start-line="221" selection-start-column="69" selection-end-line="221" selection-end-column="69" />
+            <state relative-caret-position="170">
+              <caret line="103" column="134" lean-forward="true" selection-start-line="103" selection-start-column="134" selection-end-line="103" selection-end-column="135" />
             </state>
           </provider>
         </entry>
@@ -56,10 +62,46 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/videoderby/videoderby/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="59" lean-forward="true" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
+            <state relative-caret-position="242">
+              <caret line="48" selection-start-line="48" selection-end-line="48" />
               <folding>
-                <element signature="e#0#54#0" expanded="true" />
+                <element signature="e#0#44#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/videoderby/videoderby/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="191">
+              <caret line="22" column="44" lean-forward="true" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+              <folding>
+                <element signature="e#634#666#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/videoderby/videoderby/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-527">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/videoderby/videoderby/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -84,34 +126,41 @@
       <find>&lt;tr&gt;</find>
       <find>Замбия</find>
       <find>Однажды в... Голливуде (2019)</find>
+      <find>kp_parser</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/videoderby" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/videoderby/videoderby/urls.py" />
         <option value="$PROJECT_DIR$/videoderby/videoderby/choises.py" />
         <option value="$PROJECT_DIR$/videoderby/videoderby/ggg.py" />
-        <option value="$PROJECT_DIR$/videoderby/videoderby/templates/main.html" />
         <option value="$PROJECT_DIR$/venv/Lib/site-packages/pip-10.0.1-py3.8.egg/pip/__init__.py" />
         <option value="$PROJECT_DIR$/videoderby/fdffffff.py" />
         <option value="$PROJECT_DIR$/videoderby/videoderby/validators.py" />
         <option value="$PROJECT_DIR$/videoderby/videoderby/admin.py" />
         <option value="$PROJECT_DIR$/videoderby/videoderby/migrations/0001_initial.py" />
         <option value="$PROJECT_DIR$/videoderby/videoderby/settings.py" />
-        <option value="$PROJECT_DIR$/videoderby/videoderby/models.py" />
         <option value="$PROJECT_DIR$/videoderby/videoderby/choices.py" />
-        <option value="$PROJECT_DIR$/videoderby/videoderby/views.py" />
         <option value="$PROJECT_DIR$/videoderby/videoderby/templates/index.html" />
+        <option value="$PROJECT_DIR$/videoderby/videoderby/forms.py" />
+        <option value="$PROJECT_DIR$/videoderby/videoderby/templates/main.html" />
+        <option value="$PROJECT_DIR$/videoderby/videoderby/templates/logout.html" />
+        <option value="$PROJECT_DIR$/videoderby/videoderby/urls.py" />
+        <option value="$PROJECT_DIR$/videoderby/videoderby/views.py" />
+        <option value="$PROJECT_DIR$/videoderby/videoderby/templates/film.html" />
+        <option value="$PROJECT_DIR$/videoderby/videoderby/models.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-239" />
-    <option name="y" value="29" />
+    <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -140,7 +189,7 @@
               <item name="videoderby_git" type="462c0819:PsiDirectoryNode" />
               <item name="videoderby" type="462c0819:PsiDirectoryNode" />
               <item name="videoderby" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="videoderby_git" type="b2602c69:ProjectViewProjectNode" />
@@ -155,7 +204,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/gay_porn/pykarnya-master-git/pykarnya/pykarnya" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/gay_porn/pykarnya-master-git/pykarnya" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -244,19 +293,20 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12592202" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32912722" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.28277355" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.35536295" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.20476706" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.4805468" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -266,23 +316,6 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/videoderby/videoderby/ggg.py" />
-    <entry file="file://$PROJECT_DIR$/videoderby/videoderby/templates/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="17" selection-start-column="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/videoderby/videoderby/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-          <folding>
-            <element signature="e#634#666#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/pip/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -312,30 +345,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/videoderby/videoderby/validators.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/videoderby/videoderby/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/videoderby/fdffffff.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/videoderby/fdffffff.py" />
     <entry file="file://$PROJECT_DIR$/videoderby/videoderby/static/images/filmPosters/django.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -353,33 +363,112 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/videoderby/videoderby/views.py">
+    <entry file="file://$PROJECT_DIR$/videoderby/videoderby/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="59" lean-forward="true" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
+        <state relative-caret-position="204">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
           <folding>
-            <element signature="e#0#54#0" expanded="true" />
+            <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/videoderby/videoderby/models.py">
+    <entry file="file://$PROJECT_DIR$/videoderby/videoderby/validators.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="68">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <marker date="1595234117775" expanded="true" signature="851:944" ph="..." />
+            <element signature="e#0#50#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/videoderby/videoderby/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/videoderby/videoderby/templates/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/videoderby/videoderby/templates/logout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="45" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/videoderby/videoderby/templates/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="27" column="27" lean-forward="true" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/videoderby/videoderby/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="221" column="69" selection-start-line="221" selection-start-column="69" selection-end-line="221" selection-end-column="69" />
+        <state relative-caret-position="330">
+          <caret line="131" lean-forward="true" selection-start-line="131" selection-end-line="131" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/videoderby/videoderby/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="22" column="44" lean-forward="true" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+          <folding>
+            <element signature="e#634#666#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/videoderby/videoderby/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/videoderby/videoderby/templates/film.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="103" column="134" lean-forward="true" selection-start-line="103" selection-start-column="134" selection-end-line="103" selection-end-column="135" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/videoderby/videoderby/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-527">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
