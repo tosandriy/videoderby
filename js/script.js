@@ -22,19 +22,7 @@ $(".slider-second").slick({ //slider with films
 	centerMode: false,
 });
 
-$(".film-pages").slick({ //main page films pages
-	arrows: true,
-	dots: true,
-	speed: 1,
-	swipe: false,
-	slidesToShow: 4,
-	slidesToScroll: 4,
-	vertical: true,
-	customPaging : function(slider, i) {
-	var thumb = $(slider.$slides[i]).data();
-	return '<a>'+(i+1)+'</a>';
-	},
-});
+
 
 
 $(".actor_photos_slider").slick({ //slider with actor photos
