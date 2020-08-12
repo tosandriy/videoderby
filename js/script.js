@@ -17,12 +17,24 @@ $(".slider-second").slick({ //slider with films
 	speed: 500,
 	autoplay:false,
 	swipe: true,
-	slidesToShow: 7,
+	slidesToShow: 6,
 	slidesToScroll: 1,
 	centerMode: false,
 });
 
-
+//$(".film-pages").slick({ //main page films pages
+	//arrows: true,
+	//dots: true,
+	//speed: 1,
+	//swipe: false,
+	//slidesToShow: 4,
+	//slidesToScroll: 4,
+	//vertical: true,
+	//customPaging : function(slider, i) {
+	//var thumb = $(slider.$slides[i]).data();
+	//return '<a>'+(i+1)+'</a>';
+	//},
+//});
 
 
 $(".actor_photos_slider").slick({ //slider with actor photos
@@ -74,7 +86,7 @@ $('.slider-second').on('afterChange', function(event, slick, currentSlide, nextS
 	$('.slider-second .slick-active').eq(0).css({
 		opacity: '0.4'
 	});
-	$('.slider-second .slick-active').eq(6).css({
+	$('.slider-second .slick-active').eq(5).css({
 		opacity: '0.4'
 	});
 	
@@ -91,7 +103,7 @@ $('.actor_popular_works_slider').on('afterChange', function(event, slick, curren
 	$('.actor_popular_works_slider .slick-active').eq(0).css({
 		opacity: '0.4'
 	});
-	$('.actor_popular_works_slider .slick-active').eq(6).css({
+	$('.actor_popular_works_slider .slick-active').eq(5).css({
 		opacity: '0.4'
 	});
 	
@@ -114,31 +126,68 @@ function openTab(evt, tabName) {
 }
 
 
+
+$(document).ready(function(){
+	list1=$(".review")
+	for (i = 0; i < list1.length; i++) {
+		review_t = $(list1[i]).children(".review_t").height()
+		review_t1 = $(list1[i]).children(".review_t").children(".review_container").height()
+		if (review_t1>review_t) {
+			//$(list1[i]).children(".review_t").height(review_t1)
+			$(list1[i]).children(".review_footer").children(".show_all_review").css("display","block")
+		}
+	}
+})
+function openCom(x) {
+	scrollPos = $(window).scrollTop()
+	$(x).parent().parent().children(".review_t").toggleClass("close")
+	$(x).hide()
+	$(x).parent().children(".close_all_review").show()
+	$(window).scrollTop(scrollPos) 
+	//h = $(x).parent().parent().children(".review_t").height()
+	//$(x).parent().parent().children(".review_t").css("height","auto")
+	//h2 = $(x).parent().parent().children(".review_t").height()
+	//$(x).parent().parent().children(".review_t").css("height",h)
+	//$(x).parent().parent().children(".review_t").animate({height:h2})
+	//console.log($(this).parent().parent().children(".review_t"))
+}
+function closeCom(x) {
+	scrollPos = $(window).scrollTop()
+	$(x).parent().parent().children(".review_t").toggleClass("close")
+	$(x).hide()
+	$(x).parent().children(".show_all_review").show()
+	$(window).scrollTop(scrollPos) 
+}
+$(".films_select").click(function(){
+	list1 = $(".films_select")
+	for (i = 0; i < list1.length; i++) {
+		if (!$(list1[i]).is(this)){
+			$(list1[i]).removeClass("films_select_open")
+			$(list1[i]).parent().children(".select_list").removeClass("list-open")
+		}
+	}
+	$(this).toggleClass("films_select_open")
+	$(this).parent().children(".select_list").toggleClass("list-open")
+})
+$(document).mouseup(function (e){ 
+	var div = $(".films_select"); 
+	var div2 = $(".select_list_item");
+	if (!div.is(e.target) && div.has(e.target).length === 0 && !div2.is(e.target) && div2.has(e.target).length === 0) {
+		$(".films_select").removeClass("films_select_open")
+		$(".select_list").removeClass("list-open")
+	}
+});
+$(".select_list_item").children("label").click(function(){
+	$(".films_select").removeClass("films_select_open")
+	$(".select_list").removeClass("list-open")
+})
+$(window).on("load",function(){
+	$(".select_list").mCustomScrollbar({
+		scrollInertia:300
+	});
+});
 $('.review_star').raty({
-	number: 5,
+	number: 10,
 	starOn: 'images/vectors/staron.png',
 	starOff: 'images/vectors/staroff.png'
 })
-
-jQuery(document).ready(function($) {    
-$('.rating .star').hover(function() {
-  $(this).addClass('to_rate');
-  $(this).parent().find('.star:lt(' + $(this).index() + 
-')').addClass('to_rate');
-$(this).parent().find('.star:gt(' + $(this).index() + 
-  ')').addClass('no_to_rate');
-  }).mouseout(function() {
-    $(this).parent().find('.star').removeClass('to_rate');
-    $(this).parent().find('.star:gt(' + $(this).index() + 
-    ')').removeClass('no_to_rate');
-  }).click(function() {
-$(this).removeClass('to_rate').addClass('rated');
-$(this).parent().find('.star:lt(' + $(this).index() + 
-  ')').removeClass('to_rate').addClass('rated').removeClass('total');
-  $(this).parent().find('.star:gt(' + $(this).index() + 
-  ')').removeClass('no_to_rate').removeClass('rated').removeClass('total');
-$('.rated').last().addClass('total');
-/*Save your rate*/
-/*TODO*/
-});
-});

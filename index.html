@@ -5,6 +5,7 @@
 	<title>VideoDerby</title>
 	<link rel="stylesheet" href="css/slick.css">
 	<link rel="stylesheet" href="css/slick-theme.css">
+	<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" />
 	<link rel="stylesheet" href="css/style.css">
 	<link href="https://fonts.googleapis.com/css2?family=Mina:wght@400;700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -29,98 +30,104 @@
 			</div>
 		</div>
 	</header>
-	<section class="page">
-		<div class="slider slider-first">
+	<div class="slider slider-first">
 			<div class="slide" id="slide_1">
 				<img class="slide_img" src="images/sliderPosters/slide1.png" alt="slide1">
+				<div class="gradient"></div>
 				<div class="slide_info">
-					<div class="top_slider_film_title">Приготовьтесь к продолжению истории Томаса Шелби и его неугомонных братьев</div>
-					<div class="slider_buttons">
-						<div class="top_slider_info_left">
-							<button class="top_slider_button tr_sub trailer" id="trailer_button_slide_1">Смотреть трейлер</button>
-							<button class="top_slider_button tr_sub subscribe" id="subscribe_button_slide_1">Оформить подписку</button>
-						</div>
+					<div class="top_slider_film_title">
+						<span>Приготовьтесь к продолжению истории Томаса Шелби и его неугомонных братьев</span>
 						<div class="top_slider_info_right">
 							<button class="top_slider_button like" id="like_button_slide_1"><img src="images/vectors/heartW.png" alt=""></button>
 							<button class="top_slider_button add" id="add_button_slide_1"><img src="images/vectors/addW.png" alt=""></button>
 						</div>
 					</div>
+					<div class="slider_buttons">
+						<div class="top_slider_info_left">
+							<button class="top_slider_button tr_sub trailer" id="trailer_button_slide_1">Смотреть трейлер</button>
+							<button class="top_slider_button tr_sub subscribe" id="subscribe_button_slide_1">Оформить подписку</button>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="slide" id="slide_2">
-				<img class="slide_img" src="images/sliderPosters/slide2.png" alt="slide2">
+				<img class="slide_img" src="images/sliderPosters/slide4.png" alt="slide2">
+				<div class="gradient"></div>
 				<div class="slide_info">
-					<div class="top_slider_film_title">title</div>
+					<div class="top_slider_film_title">
+						<span>title</span>
+						<div class="top_slider_info_right">
+							<button class="top_slider_button like" id="like_button_slide_2"><img src="images/vectors/heartW.png" alt=""></button>
+							<button class="top_slider_button add" id="add_button_slide_2"><img src="images/vectors/addW.png" alt=""></button>
+						</div>
+					</div>
 					<div class="slider_buttons">
 						<div class="top_slider_info_left">
 							<button class="top_slider_button tr_sub trailer" id="trailer_button_slide_2">Смотреть трейлер</button>
 							<button class="top_slider_button tr_sub subscribe" id="subscribe_button_slide_2">Оформить подписку</button>
-						</div>
-						<div class="top_slider_info_right">
-							<button class="top_slider_button like" id="like_button_slide_2"><img src="images/vectors/heartW.png" alt=""></button>
-							<button class="top_slider_button add" id="add_button_slide_2"><img src="images/vectors/addW.png" alt=""></button>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="slide" id="slide_3">
 				<img class="slide_img" src="images/sliderPosters/slide2.png" alt="slide3">
+				<div class="gradient"></div>
 				<div class="slide_info">
-					<div class="top_slider_film_title">title</div>
-						<div class="slider_buttons">
-						<div class="top_slider_info_left">
-							<button class="top_slider_button tr_sub trailer" id="trailer_button_slide_3">Смотреть трейлер</button>
-							<button class="top_slider_button tr_sub subscribe" id="subscribe_button_slide_3">Оформить подписку</button>
-						</div>
+					<div class="top_slider_film_title">
+						<span>title</span>
 						<div class="top_slider_info_right">
 							<button class="top_slider_button like" id="like_button_slide_3"><img src="images/vectors/heartW.png" alt=""></button>
 							<button class="top_slider_button add" id="add_button_slide_3"><img src="images/vectors/addW.png" alt=""></button>
 						</div>
 					</div>
+						<div class="slider_buttons">
+						<div class="top_slider_info_left">
+							<button class="top_slider_button tr_sub trailer" id="trailer_button_slide_3">Смотреть трейлер</button>
+							<button class="top_slider_button tr_sub subscribe" id="subscribe_button_slide_3">Оформить подписку</button>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
+	<section class="page">
 
-		<h2 class="recomend_to_watch">Рекомендуем к просмотру:</h2>
-
-		<div class="line"></div>
-
-		<div class="slider slider-second">
-			<a href="#" class="film_slide">
-				<img src="images/filmPosters/wolf.png" alt="" width="135" height="200">
-				<span class="film_slide_name">Волк с Уолл-стрит</span>
-			</a>
-			<a href="#" class="film_slide">
-				<img src="images/filmPosters/django.png" alt="" width="135" height="200">
-				<span class="film_slide_name">Джанго Освобождённый</span>
-			</a>
-			<a href="#" class="film_slide">
-				<img src="images/filmPosters/hollywood.png" alt="" width="135" height="200">
-				<span class="film_slide_name">Однажды в Голливуде</span>
-			</a>
-			<a href="#" class="film_slide">
-				<img src="images/filmPosters/america.png" alt="" width="135" height="200">
-				<span class="film_slide_name">Первый мститель</span>
-			</a>
-			<a href="#" class="film_slide">
-				<img src="images/filmPosters/logan.png" alt="" width="135" height="200">
-				<span class="film_slide_name">Логан</span>
-			</a>
-			<a href="#" class="film_slide">
-				<img src="images/filmPosters/warz.png" alt="" width="135" height="200">
-				<span class="film_slide_name">WarZ</span>
-			</a>
-			<a href="#" class="film_slide">
-				<img src="images/filmPosters/term.png" alt="" width="135" height="200">
-				<span class="film_slide_name">Терминатор 2</span>
-			</a>
-			<a href="#" class="film_slide">
-				<img src="images/filmPosters/warz.png" alt="" width="135" height="200">
-				<span class="film_slide_name">WarZ</span>
-			</a>
+		<div class="recomend_to_watch_container">
+			<h2 class="recomend_to_watch">Рекомендуем к просмотру:</h2>
+			<div class="slider slider-second">
+				<a href="#" class="film_slide">
+					<img src="images/filmPosters/wolf.png" alt="" width="135" height="200">
+					<span class="film_slide_name">Волк с Уолл-стрит</span>
+				</a>
+				<a href="#" class="film_slide">
+					<img src="images/filmPosters/django.png" alt="" width="135" height="200">
+					<span class="film_slide_name">Джанго Освобождённый</span>
+				</a>
+				<a href="#" class="film_slide">
+					<img src="images/filmPosters/hollywood.png" alt="" width="135" height="200">
+					<span class="film_slide_name">Однажды в Голливуде</span>
+				</a>
+				<a href="#" class="film_slide">
+					<img src="images/filmPosters/america.png" alt="" width="135" height="200">
+					<span class="film_slide_name">Первый мститель</span>
+				</a>
+				<a href="#" class="film_slide">
+					<img src="images/filmPosters/logan.png" alt="" width="135" height="200">
+					<span class="film_slide_name">Логан</span>
+				</a>
+				<a href="#" class="film_slide">
+					<img src="images/filmPosters/warz.png" alt="" width="135" height="200">
+					<span class="film_slide_name">WarZ</span>
+				</a>
+				<a href="#" class="film_slide">
+					<img src="images/filmPosters/term.png" alt="" width="135" height="200">
+					<span class="film_slide_name">Терминатор 2</span>
+				</a>
+				<a href="#" class="film_slide">
+					<img src="images/filmPosters/warz.png" alt="" width="135" height="200">
+					<span class="film_slide_name">WarZ</span>
+				</a>
+			</div>
 		</div>
-
-		<div class="line"></div>
 		<div class="main_news">
 			<h2 class="main_news_title">Главные новости из мира кино:</h2>
 
@@ -167,64 +174,425 @@
 		</div>
 
 		<div class="main_films">
-			<div class="side_soon">
-				<div class="soon">Скоро<br> на сайте</div>
-				<div class="soon_films">
-					<a href="#"><img src="images/filmPosters/death.png" alt="" height="125" width="85"></a>
-					<a href="#"><img src="images/filmPosters/kill.png" alt="" height="125" width="85"></a>
-					<a href="#"><img src="images/filmPosters/1917.png" alt="" height="125" width="85"></a>
-					<a href="#"><img src="images/filmPosters/avanpost.png" alt="" height="125" width="85"></a>
-					<a href="#"><img src="images/filmPosters/pulp.png" alt="" height="125" width="85"></a>
-					<a href="#"><img src="images/filmPosters/bb.png" alt="" height="125" width="85"></a>
-					<a href="#"><img src="images/filmPosters/shark.png" alt="" height="125" width="85"></a>
-					<a href="#"><img src="images/filmPosters/snp.png" alt="" height="125" width="85"></a>
-				</div>
-				<div class="line"></div>
-			</div>
 			<div class="films">
 				<div class="films_filter">
 					<div class="filter_choose">
+						<input class="check_filter" type="checkbox" id="films_r" value="films" name="filter_choose" checked="">
 						<label for="films_r">Фильмы</label>
-						<input class="radio_filter" type="radio" id="films_r" value="films" name="filter_choose" checked="">
+						<input class="check_filter" type="checkbox" id="serials_r" value="serials" name="filter_choose">
 						<label for="serials_r">Сериалы</label>
-						<input class="radio_filter" type="radio" id="serials_r" value="serials" name="filter_choose">
+						<input class="check_filter" type="checkbox" id="trailers_r" value="trailers" name="filter_choose">
 						<label for="trailers_r">Трейлеры</label>
-						<input class="radio_filter" type="radio" id="trailers_r" value="trailers" name="filter_choose">
-						<span id="genre_span">Жанр:</span>
-						<select class="films_select" name="genre" id="genre">
-							<option value="" selected="">Триллер</option>
-							<option value="">2</option>
-							<option value="">3</option>
-						</select>
-						<span id="year_span">Год выпуска:</span>
-						<select class="films_select" name="year" id="year">
-							<option value="">-</option>
-							<option value="">2</option>
-							<option value="">3</option>
-						</select>
+						<input class="check_filter" type="checkbox" id="tag1_r" value="trailers" name="filter_choose">
+						<label for="tag1_r">Tag1</label>
+						<input class="check_filter" type="checkbox" id="tag2_r" value="trailers" name="filter_choose">
+						<label for="tag2_r">Tag2</label>
+						<input class="check_filter" type="checkbox" id="tag3_r" value="trailers" name="filter_choose">
+						<label for="tag3_r">Tag3</label>
+						<button class="clear_filter">Очистить фильтр</button>
+					</div>
+					<div class="filter_lists">
+						<div class="select_container genre">
+							<div id="genre_span">Жанр:</div>
+							<div class="films_select " name="genre" id="genre">
+								<span class="cur_select">Все жанры</span>
+							</div>
+							<div class="select_list">
+								<div class="select_list_wrapper">
+									<div class="select_list_item">
+										<input type="radio" id="allgenre" value="" name="genre_item" checked="checked">
+										<label for="allgenre">Все жанры</label>
+									</div>
+									<div class="select_list_item">
+										<input type="radio" id="triller" value="" name="genre_item">
+										<label for="triller">Триллер</label>
+									</div>
+									<div class="select_list_item">
+										<input type="radio" id="boevik" value="" name="genre_item">
+										<label for="boevik">Боевик</label>
+									</div>
+									<div class="select_list_item">
+										<input type="radio" id="fantastika" value="" name="genre_item">
+										<label for="fantastika">Фантастика</label>
+									</div>
+									<div class="select_list_item">
+										<input type="radio" id="12312" value="" name="genre_item">
+										<label for="12312">12312</label>
+									</div>
+									<div class="select_list_item">
+										<input type="radio" id="123133" value="" name="genre_item">
+										<label for="123133">123133</label>
+									</div>
+									<div class="select_list_item">
+										<input type="radio" id="112321" value="" name="genre_item">
+										<label for="112321">112321</label>
+									</div>
+									<div class="select_list_item">
+										<input type="radio" id="312233" value="" name="genre_item">
+										<label for="312233">312233</label>
+									</div>
+									<div class="select_list_item">
+										<input type="radio" id="312233" value="" name="genre_item">
+										<label for="312233">312233</label>
+									</div>
+									<div class="select_list_item">
+										<input type="radio" id="312233" value="" name="genre_item">
+										<label for="312233">312233</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="select_container year">
+							<div id="genre_span">Год выпуска:</div>
+							<div class="films_select " name="year" id="year">
+								<span class="cur_select">Все годы</span>
+							</div>
+							<div class="select_list">
+								<div class="select_list_wrapper">
+									<div class="select_list_item">
+										<input type="radio" id="allyears" value="" name="year_item" checked="checked">
+										<label for="allyears">Все годы</label>
+									</div>
+									<div class="select_list_item">
+										<input type="radio" id="2020" value="" name="year_item">
+										<label for="2020">2020</label>
+									</div>
+									<div class="select_list_item">
+										<input type="radio" id="2019" value="" name="year_item">
+										<label for="2019">2019</label>
+									</div>
+									<div class="select_list_item">
+										<input type="radio" id="2018" value="" name="year_item">
+										<label for="2018">2018</label>
+									</div>
+									<div class="select_list_item">
+										<input type="radio" id="2017" value="" name="year_item">
+										<label for="2017">2017</label>
+									</div>
+									<div class="select_list_item">
+										<input type="radio" id="2016" value="" name="year_item">
+										<label for="2016">2016</label>
+									</div>
+									<div class="select_list_item">
+										<input type="radio" id="2015" value="" name="year_item">
+										<label for="2015">2015</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="select_container country">
+							<div id="genre_span">Страна:</div>
+							<div class="films_select " name="country" id="country">
+								<span class="cur_select">Все страны</span>
+							</div>
+							<div class="select_list">
+								<div class="select_list_wrapper">
+									<div class="select_list_item">
+										<input type="radio" id="allcountries" value="" name="country_item" checked="checked">
+										<label for="allcountries">Все страны</label>
+									</div>
+									<div class="select_list_item">
+										<input type="radio" id="russia" value="" name="country_item">
+										<label for="russia">Россия</label>
+									</div>
+									<div class="select_list_item">
+										<input type="radio" id="ukraine" value="" name="country_item">
+										<label for="ukraine">Украина</label>
+									</div>
+									<div class="select_list_item">
+										<input type="radio" id="belurussia" value="" name="country_item">
+										<label for="belurussia">belurussia</label>
+									</div>
+									<div class="select_list_item">
+										<input type="radio" id="kazah" value="" name="country_item">
+										<label for="kazah">kazah</label>
+									</div>
+									<div class="select_list_item">
+										<input type="radio" id="usa" value="" name="country_item">
+										<label for="usa">usa</label>
+									</div>
+									<div class="select_list_item">
+										<input type="radio" id="nigeria" value="" name="country_item">
+										<label for="nigeria">nigeria</label>
+									</div>
+									<div class="select_list_item">
+										<input type="radio" id="nigeria" value="" name="country_item">
+										<label for="nigeria">nigeria</label>
+									</div>
+									<div class="select_list_item">
+										<input type="radio" id="nigeria" value="" name="country_item">
+										<label for="nigeria">nigeria</label>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 					<div class="filter_sort">
 						<span>Сортировать по:</span>
 						<div class="sort_btns">
-							<button class="sort_btn">по популярности</button>
+							<button class="sort_btn cur_sort">по популярности</button>
 							<button class="sort_btn">по рейтинку</button>
 							<button class="sort_btn">по отзывам</button>
 							<button class="sort_btn">по новизне</button>
 						</div>
-						<button class="clear_filter">Очистить фильтр</button>
 					</div>
 				</div>
-				<div class="line"></div>
 
+				<div class="slider film-pages">
+					<div class="films_container">
+						<div class="main_film">
+							<div class="main_film_title">
+								<span>Однажды в... Голливуде (2019)</span>
+								<div class="main_film_raiting positively">
+									<span>9.8</span>
+								</div>
+							</div>
+							<div class="main_film_info">
+								<img src="images/filmPosters/hollywood.png" alt="" class="main_film_poster" width="170" height="270">
+								<div class="main_film_info_text">
+									<div class="film_descr">Год: <a href="#">2019</a></div>
+									<div class="film_descr">Страна: <a href="#">США</a>,<a href="#">Великобритания</a></div>
+									<div class="film_descr">Жанр: <a href="#">Ебанутый</a></div>
+									<div class="film_descr">Режиссёр: <a href="#">Квентин Тарантино</a></div>
+									<div class="film_descr">Длительность: 161 мин.</div>
+									<div class="film_descr">1969 год, золотой век Голливуда уже закончился. Известный актёр Рик Далтон и его дублер Клифф Бут пытаются найти свое место в стремительно меняющемся мире киноиндустрии.</div>
+								</div>
+							</div>
+							<div class="main_film_btns">
+								<button class="top_slider_button tr_sub trailer" id="main_film_tr_btn_1">Смотреть трейлер</button>
+								<button class="top_slider_button tr_sub watch" id="main_film_watch_btn_1">Смотреть онлайн</button>
+								
+								<div class="bottom_right_btns"><button><img src="images/vectors/heartW.png" alt=""></button><button><img src="images/vectors/addW.png" alt=""></button></div>
+							</div>
+						</div>
+						<div class="main_film">
+							<div class="main_film_title">
+								<span>Бесславные ублюдки (2009)</span>
+								<div class="main_film_raiting positively">
+									<span>9.8</span>
+								</div>
+							</div>
+							<div class="main_film_info">
+								<img src="images/filmPosters/ubl.png" alt="" class="main_film_poster" width="170" height="270">
+								<div class="main_film_info_text">
+									<div class="film_descr">Год: <a href="#">2009</a></div>
+									<div class="film_descr">Страна: <a href="#">США</a>,<a href="#">Германия</a></div>
+									<div class="film_descr">Жанр: <a href="#">Ебанутый</a></div>
+									<div class="film_descr">Режиссёр: <a href="#">Квентин Тарантино</a></div>
+									<div class="film_descr">Длительность: 153 мин.</div>
+									<div class="film_descr">Вторая мировая война, в оккупированной немцами Франции группа американских солдат-евреев наводит страх на нацистов, жестоко убивая и скальпируя солдат.</div>
+								</div>
+							</div>
+							<div class="main_film_btns">
+								<button class="top_slider_button tr_sub trailer" id="main_film_tr_btn_1">Смотреть трейлер</button>
+								<button class="top_slider_button tr_sub watch" id="main_film_watch_btn_1">Смотреть онлайн</button>
+								<div class="bottom_right_btns"><button><img src="images/vectors/heartW.png" alt=""></button><button><img src="images/vectors/addW.png" alt=""></button></div>
+							</div>
+						</div>
+						<div class="main_film">
+							<div class="main_film_title">
+								<span>Форд против Феррари (2019)</span>
+								<div class="main_film_raiting positively">
+									<span>9.8</span>
+								</div>
+							</div>
+							<div class="main_film_info">
+								<img src="images/filmPosters/ford.png" alt="" class="main_film_poster" width="170" height="270">
+								<div class="main_film_info_text">
+									<div class="film_descr">Год: <a href="#">2019</a></div>
+									<div class="film_descr">Страна: <a href="#">США</a>,<a href="#">Франция</a></div>
+									<div class="film_descr">Жанр: <a href="#">Ебанутый</a></div>
+									<div class="film_descr">Режиссёр: <a href="#">Джеймс Мэнголд</a></div>
+									<div class="film_descr">Длительность: 152 мин.</div>
+									<div class="film_descr">1969 год, золотой век Голливуда уже закончился. Известный актёр Рик Далтон и его дублер Клифф Бут пытаются найти свое место в стремительно меняющемся мире киноиндустрии.</div>
+								</div>
+							</div>
+							<div class="main_film_btns">
+								<button class="top_slider_button tr_sub trailer" id="main_film_tr_btn_1">Смотреть трейлер</button>
+								<button class="top_slider_button tr_sub watch" id="main_film_watch_btn_1">Смотреть онлайн</button>
+								<div class="bottom_right_btns"><button><img src="images/vectors/heartW.png" alt=""></button><button><img src="images/vectors/addW.png" alt=""></button></div>
+							</div>
+						</div>
+						<div class="main_film">
+							<div class="main_film_title">
+								<span>Гран Торино (2008)</span>
+								<div class="main_film_raiting positively">
+									<span>9.8</span>
+								</div>
+							</div>
+							<div class="main_film_info">
+								<img src="images/filmPosters/torino.png" alt="" class="main_film_poster" width="170" height="270">
+								<div class="main_film_info_text">
+									<div class="film_descr">Год: <a href="#">2008</a></div>
+									<div class="film_descr">Страна: <a href="#">США</a>,<a href="#">Германия</a></div>
+									<div class="film_descr">Жанр: <a href="#">Ебанутый</a></div>
+									<div class="film_descr">Режиссёр: <a href="#">Клинт Иствуд</a></div>
+									<div class="film_descr">Длительность: 116 мин.</div>
+									<div class="film_descr">Вышедший на пенсию автомеханик Уолт Ковальски проводит дни, починяя что-то по дому, попивая пиво и раз в месяц заходя к парикмахеру. И хотя последним желанием его недавно почившей жены было совершение...</div>
+								</div>
+							</div>
+							<div class="main_film_btns">
+								<button class="top_slider_button tr_sub trailer" id="main_film_tr_btn_1">Смотреть трейлер</button>
+								<button class="top_slider_button tr_sub watch" id="main_film_watch_btn_1">Смотреть онлайн</button>
+								<div class="bottom_right_btns"><button><img src="images/vectors/heartW.png" alt=""></button><button><img src="images/vectors/addW.png" alt=""></button></div>
+							</div>
+						</div>
+						<div class="main_film">
+							<div class="main_film_title">
+								<span>Бесславные ублюдки (2009)</span>
+								<div class="main_film_raiting positively">
+									<span>9.8</span>
+								</div>
+							</div>
+							<div class="main_film_info">
+								<img src="images/filmPosters/ubl.png" alt="" class="main_film_poster" width="170" height="270">
+								<div class="main_film_info_text">
+									<div class="film_descr">Год: <a href="#">2009</a></div>
+									<div class="film_descr">Страна: <a href="#">США</a>,<a href="#">Германия</a></div>
+									<div class="film_descr">Жанр: <a href="#">Ебанутый</a></div>
+									<div class="film_descr">Режиссёр: <a href="#">Квентин Тарантино</a></div>
+									<div class="film_descr">Длительность: 153 мин.</div>
+									<div class="film_descr">Вторая мировая война, в оккупированной немцами Франции группа американских солдат-евреев наводит страх на нацистов, жестоко убивая и скальпируя солдат.</div>
+								</div>
+							</div>
+							<div class="main_film_btns">
+								<button class="top_slider_button tr_sub trailer" id="main_film_tr_btn_1">Смотреть трейлер</button>
+								<button class="top_slider_button tr_sub watch" id="main_film_watch_btn_1">Смотреть онлайн</button>
+								<div class="bottom_right_btns"><button><img src="images/vectors/heartW.png" alt=""></button><button><img src="images/vectors/addW.png" alt=""></button></div>
+							</div>
+						</div>
+						<div class="main_film">
+							<div class="main_film_title">
+								<span>Однажды в... Голливуде (2019)</span>
+								<div class="main_film_raiting positively">
+									<span>9.8</span>
+								</div>
+							</div>
+							<div class="main_film_info">
+								<img src="images/filmPosters/hollywood.png" alt="" class="main_film_poster" width="170" height="270">
+								<div class="main_film_info_text">
+									<div class="film_descr">Год: <a href="#">2019</a></div>
+									<div class="film_descr">Страна: <a href="#">США</a>,<a href="#">Великобритания</a></div>
+									<div class="film_descr">Жанр: <a href="#">Ебанутый</a></div>
+									<div class="film_descr">Режиссёр: <a href="#">Квентин Тарантино</a></div>
+									<div class="film_descr">Длительность: 161 мин.</div>
+									<div class="film_descr">1969 год, золотой век Голливуда уже закончился. Известный актёр Рик Далтон и его дублер Клифф Бут пытаются найти свое место в стремительно меняющемся мире киноиндустрии.</div>
+								</div>
+							</div>
+							<div class="main_film_btns">
+								<button class="top_slider_button tr_sub trailer" id="main_film_tr_btn_1">Смотреть трейлер</button>
+								<button class="top_slider_button tr_sub watch" id="main_film_watch_btn_1">Смотреть онлайн</button>
+								
+								<div class="bottom_right_btns"><button><img src="images/vectors/heartW.png" alt=""></button><button><img src="images/vectors/addW.png" alt=""></button></div>
+							</div>
+						</div>
+						<div class="main_film">
+							<div class="main_film_title">
+								<span>Бесславные ублюдки (2009)</span>
+								<div class="main_film_raiting positively">
+									<span>9.8</span>
+								</div>
+							</div>
+							<div class="main_film_info">
+								<img src="images/filmPosters/ubl.png" alt="" class="main_film_poster" width="170" height="270">
+								<div class="main_film_info_text">
+									<div class="film_descr">Год: <a href="#">2009</a></div>
+									<div class="film_descr">Страна: <a href="#">США</a>,<a href="#">Германия</a></div>
+									<div class="film_descr">Жанр: <a href="#">Ебанутый</a></div>
+									<div class="film_descr">Режиссёр: <a href="#">Квентин Тарантино</a></div>
+									<div class="film_descr">Длительность: 153 мин.</div>
+									<div class="film_descr">Вторая мировая война, в оккупированной немцами Франции группа американских солдат-евреев наводит страх на нацистов, жестоко убивая и скальпируя солдат.</div>
+								</div>
+							</div>
+							<div class="main_film_btns">
+								<button class="top_slider_button tr_sub trailer" id="main_film_tr_btn_1">Смотреть трейлер</button>
+								<button class="top_slider_button tr_sub watch" id="main_film_watch_btn_1">Смотреть онлайн</button>
+								<div class="bottom_right_btns"><button><img src="images/vectors/heartW.png" alt=""></button><button><img src="images/vectors/addW.png" alt=""></button></div>
+							</div>
+						</div>
+						<div class="main_film">
+							<div class="main_film_title">
+								<span>Форд против Феррари (2019)</span>
+								<div class="main_film_raiting positively">
+									<span>9.8</span>
+								</div>
+							</div>
+							<div class="main_film_info">
+								<img src="images/filmPosters/ford.png" alt="" class="main_film_poster" width="170" height="270">
+								<div class="main_film_info_text">
+									<div class="film_descr">Год: <a href="#">2019</a></div>
+									<div class="film_descr">Страна: <a href="#">США</a>,<a href="#">Франция</a></div>
+									<div class="film_descr">Жанр: <a href="#">Ебанутый</a></div>
+									<div class="film_descr">Режиссёр: <a href="#">Джеймс Мэнголд</a></div>
+									<div class="film_descr">Длительность: 152 мин.</div>
+									<div class="film_descr">1969 год, золотой век Голливуда уже закончился. Известный актёр Рик Далтон и его дублер Клифф Бут пытаются найти свое место в стремительно меняющемся мире киноиндустрии.</div>
+								</div>
+							</div>
+							<div class="main_film_btns">
+								<button class="top_slider_button tr_sub trailer" id="main_film_tr_btn_1">Смотреть трейлер</button>
+								<button class="top_slider_button tr_sub watch" id="main_film_watch_btn_1">Смотреть онлайн</button>
+								<div class="bottom_right_btns"><button><img src="images/vectors/heartW.png" alt=""></button><button><img src="images/vectors/addW.png" alt=""></button></div>
+							</div>
+						</div>
+						<div class="main_film">
+							<div class="main_film_title">
+								<span>Гран Торино (2008)</span>
+								<div class="main_film_raiting positively">
+									<span>9.8</span>
+								</div>
+							</div>
+							<div class="main_film_info">
+								<img src="images/filmPosters/torino.png" alt="" class="main_film_poster" width="170" height="270">
+								<div class="main_film_info_text">
+									<div class="film_descr">Год: <a href="#">2008</a></div>
+									<div class="film_descr">Страна: <a href="#">США</a>,<a href="#">Германия</a></div>
+									<div class="film_descr">Жанр: <a href="#">Ебанутый</a></div>
+									<div class="film_descr">Режиссёр: <a href="#">Клинт Иствуд</a></div>
+									<div class="film_descr">Длительность: 116 мин.</div>
+									<div class="film_descr">Вышедший на пенсию автомеханик Уолт Ковальски проводит дни, починяя что-то по дому, попивая пиво и раз в месяц заходя к парикмахеру. И хотя последним желанием его недавно почившей жены было совершение...</div>
+								</div>
+							</div>
+							<div class="main_film_btns">
+								<button class="top_slider_button tr_sub trailer" id="main_film_tr_btn_1">Смотреть трейлер</button>
+								<button class="top_slider_button tr_sub watch" id="main_film_watch_btn_1">Смотреть онлайн</button>
+								<div class="bottom_right_btns"><button><img src="images/vectors/heartW.png" alt=""></button><button><img src="images/vectors/addW.png" alt=""></button></div>
+							</div>
+						</div>
+						<div class="main_film">
+							<div class="main_film_title">
+								<span>Бесславные ублюдки (2009)</span>
+								<div class="main_film_raiting positively">
+									<span>9.8</span>
+								</div>
+							</div>
+							<div class="main_film_info">
+								<img src="images/filmPosters/ubl.png" alt="" class="main_film_poster" width="170" height="270">
+								<div class="main_film_info_text">
+									<div class="film_descr">Год: <a href="#">2009</a></div>
+									<div class="film_descr">Страна: <a href="#">США</a>,<a href="#">Германия</a></div>
+									<div class="film_descr">Жанр: <a href="#">Ебанутый</a></div>
+									<div class="film_descr">Режиссёр: <a href="#">Квентин Тарантино</a></div>
+									<div class="film_descr">Длительность: 153 мин.</div>
+									<div class="film_descr">Вторая мировая война, в оккупированной немцами Франции группа американских солдат-евреев наводит страх на нацистов, жестоко убивая и скальпируя солдат.</div>
+								</div>
+							</div>
+							<div class="main_film_btns">
+								<button class="top_slider_button tr_sub trailer" id="main_film_tr_btn_1">Смотреть трейлер</button>
+								<button class="top_slider_button tr_sub watch" id="main_film_watch_btn_1">Смотреть онлайн</button>
+								<div class="bottom_right_btns"><button><img src="images/vectors/heartW.png" alt=""></button><button><img src="images/vectors/addW.png" alt=""></button></div>
+							</div>
+						</div>
+					</div>
 				<div class="film-pages">
 					<div class="dots-list">
-						<li><a href="#" class="">1</a></li>
+						<li class="dot-active"><a href="#" class="">1</a></li>
 						<li><a href="#" class="">2</a></li>
 						<li><a href="#" class="">3</a></li>
 						<li><a href="#" class="">4</a></li>
 						<li><a href="#" class="" style="pointer-events: none;">...</a></li>
 						<li><a href="#" class="">9</a></li>
 					</div>
+				</div>
 				</div>
 			</div>
 		</div>
@@ -247,5 +615,6 @@
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/slick.js"></script>
 	<script src="js/script.js"></script>
+	<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
 </body>
 </html>

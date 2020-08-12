@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/slick.css">
+	<link rel="stylesheet" href="css/slick-theme.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Mina:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header class="page__header">
+		<div class="logo"><img src="images/LogoCenter.png" alt="logo"></div>
+		<div class="header__content">
+			<div class="header__left">
+				<a href="#" class="site_name">VideoDerby</a>
+
+				<nav class="header__nav">
+					<a href="#" id="films">ФИЛЬМЫ</a>
+					<a href="#" id="serials">СЕРИАЛЫ</a>
+					<a href="#" id="afisha">АФИША</a>
+				</nav>
+			</div>
+			<div class="header__right">
+				<input type="text" class="search" placeholder="Поиск...">
+
+				<a href="#" class="login">ВОЙТИ</a>
+			</div>
+		</div>
+	</header>
+	
+	<section class="page">
+		<div class="films_search">
+			<h1>Искать фильм</h1>
+			<form class="films_search_filter">
+				<input type="text" placeholder="название фильма" class="input_area">
+				<div class="year_filter">
+					<input type="text" class="input_area" placeholder="year">
+				</div>
+				<div class="interval_filter">
+					<span>или интервал</span>
+					<span>c</span>
+					<select name="" id="" class="input_area">
+						<option value="" disabled="" selected="">-</option>
+						<option value="">2</option>
+						<option value="">3</option>
+					</select>
+					<span>по</span>
+					<select name="" id="" class="input_area">
+						<option value="" disabled="" selected="">-</option>
+						<option value="">2</option>
+						<option value="">3</option>
+					</select>
+				</div>
+				<div class="strana_filter">
+					<span>+страна</span>
+					<select name="" id="" class="input_area">
+						<option value="" disabled="" selected="">-</option>
+						<option value="">2</option>
+						<option value="">3</option>
+					</select>
+				</div>
+				<div class="select_container genre">
+					<div id="genre_span">Жанр:</div>
+					<div class="films_select " name="genre" id="genre">
+						<span class="cur_select">Все жанры</span>
+					</div>
+					<div class="select_list">
+						<div class="select_list_wrapper">
+							<div class="select_list_item">
+								<input type="radio" id="allgenre" value="" name="genre_item" checked="checked">
+								<label for="allgenre">Все жанры</label>
+							</div>
+							<div class="select_list_item">
+								<input type="radio" id="triller" value="" name="genre_item">
+								<label for="triller">Триллер</label>
+							</div>
+							<div class="select_list_item">
+								<input type="radio" id="boevik" value="" name="genre_item">
+								<label for="boevik">Боевик</label>
+							</div>
+							<div class="select_list_item">
+								<input type="radio" id="fantastika" value="" name="genre_item">
+								<label for="fantastika">Фантастика</label>
+							</div>
+							<div class="select_list_item">
+								<input type="radio" id="12312" value="" name="genre_item">
+								<label for="12312">12312</label>
+							</div>
+							<div class="select_list_item">
+								<input type="radio" id="123133" value="" name="genre_item">
+								<label for="123133">123133</label>
+							</div>
+							<div class="select_list_item">
+								<input type="radio" id="112321" value="" name="genre_item">
+								<label for="112321">112321</label>
+							</div>
+							<div class="select_list_item">
+								<input type="radio" id="312233" value="" name="genre_item">
+								<label for="312233">312233</label>
+							</div>
+							<div class="select_list_item">
+								<input type="radio" id="312233" value="" name="genre_item">
+								<label for="312233">312233</label>
+							</div>
+							<div class="select_list_item">
+								<input type="radio" id="312233" value="" name="genre_item">
+								<label for="312233">312233</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="release">
+					<span>+премьера</span>
+					<input type="date" class="input_area">
+				</div>
+				<input type="submit" class="login_btn">
+			</form>
+		</div>
+		<div class="main_film">
+			<div class="main_film_title">
+				<span>Бесславные ублюдки (2009)</span>
+				<div class="main_film_raiting positively">
+					<span>9.8</span>
+				</div>
+			</div>
+			<div class="main_film_info">
+				<img src="images/filmPosters/ubl.png" alt="" class="main_film_poster" width="170" height="270">
+				<div class="main_film_info_text">
+					<div class="film_descr">Год: <a href="#">2009</a></div>
+					<div class="film_descr">Страна: <a href="#">США</a>,<a href="#">Германия</a></div>
+					<div class="film_descr">Жанр: <a href="#">Ебанутый</a></div>
+					<div class="film_descr">Режиссёр: <a href="#">Квентин Тарантино</a></div>
+					<div class="film_descr">Длительность: 153 мин.</div>
+					<div class="film_descr">Вторая мировая война, в оккупированной немцами Франции группа американских солдат-евреев наводит страх на нацистов, жестоко убивая и скальпируя солдат.</div>
+					</div>
+				</div>
+			<div class="main_film_btns">
+				<button class="top_slider_button tr_sub trailer" id="main_film_tr_btn_1">Смотреть трейлер</button>
+				<button class="top_slider_button tr_sub watch" id="main_film_watch_btn_1">Смотреть онлайн</button>
+				<div class="bottom_right_btns"><button><img src="images/vectors/heartW.png" alt=""></button><button><img src="images/vectors/addW.png" alt=""></button></div>
+			</div>
+		</div>
+	</section>
+	<footer class="footer">
+		<div class="footer_site_label">VideoDerby</div>
+		<div class="trash">
+			<div class="copy">© 2020 VideoDerby</div>
+			<div class="socials">
+				<a href="#"><img src="images/icons/vk.png" alt=""></a>
+				<a href="#"><img src="images/icons/instagram.png" alt=""></a>
+				<a href="#"><img src="images/icons/twitter.png" alt=""></a>
+				<a href="#"><img src="images/icons/facebook.png" alt=""></a>
+			</div>
+			<div class="maded">Разработано: <span>Долбоёбами ИПЭКа</span></div>
+		</div>
+	</footer>
+	<script src="http://kinoplayer.top/top.js"></script>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/jquery.raty.js"></script>
+	<script src="js/slick.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>
