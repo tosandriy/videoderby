@@ -111,20 +111,11 @@ $('.actor_popular_works_slider').on('afterChange', function(event, slick, curren
 
 
 
-function openTab(evt, tabName) {
-	var i, x, tablinks;
-	x = document.getElementsByClassName("tab");
-	for (i = 0; i < x.length; i++) {
-	    x[i].style.display = "none";
-	}
-	tablinks = document.getElementsByClassName("tabBtn");
-	for (i = 0; i < x.length; i++) {
-	    tablinks[i].className = tablinks[i].className.replace(" button_tab_active", "");
-	}
-	document.getElementById(tabName).style.display = "flex";
-	evt.currentTarget.className += " button_tab_active"; 
-}
-
+$(".tab_item").not(":first").hide();
+$(".film_trailer .tabBtn").click(function() {
+	$(".film_trailer .tabBtn").removeClass("button_tab_active").eq($(this).index()).addClass("button_tab_active");
+	$(".tab_item").hide().eq($(this).index()).fadeIn()
+}).eq(0);
 
 
 $(document).ready(function(){

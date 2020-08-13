@@ -81,14 +81,16 @@
 		</div>
 		<div class="film_trailer">
 			<div class="tab_nav">
-				<button onclick="openTab(event,'trailer')" class="tabBtn button_tab_active">Трейлер</button>
-				<button onclick="openTab(event,'film')" class="tabBtn">Фильм</button>
+				<button class="tabBtn button_tab_active">Трейлер</button>
+				<button class="tabBtn">Фильм</button>
 			</div>
-			<div class="film_player tab" id="trailer">
-				<div id="kinoplayertop" data-player="torrent" data-kinopoisk="902939"></div> 
-			</div>
-			<div class="film_player tab" id="film" style="display:none">
-				<div id="kinoplayertop" data-player="torrent" data-kinopoisk="902939"></div> 
+			<div class="tab_content">
+				<div class="film_player tab_item" id="trailer">
+					<div id="kinoplayertop" data-player="trailer" data-kinopoisk="902939"></div> 
+				</div>
+				<div class="film_player tab_item" id="film">
+					<div id="kinoplayertop" data-player="torrent" data-kinopoisk="902939"></div> 
+				</div>
 			</div>
 		</div>
 		
