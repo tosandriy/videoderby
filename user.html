@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/slick.css">
+	<link rel="stylesheet" href="css/slick-theme.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Mina:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header class="page__header">
+		<div class="logo"><img src="images/LogoCenter.png" alt="logo"></div>
+		<div class="header__content">
+			<div class="header__left">
+				<a href="#" class="site_name">VideoDerby</a>
+
+				<nav class="header__nav">
+					<a href="#" id="users">ФИЛЬМЫ</a>
+					<a href="#" id="serials">СЕРИАЛЫ</a>
+					<a href="#" id="afisha">АФИША</a>
+				</nav>
+			</div>
+			<div class="header__right">
+				<input type="text" class="search" placeholder="Поиск...">
+
+				<a href="#" class="login">ВОЙТИ</a>
+			</div>
+		</div>
+	</header>
+	
+	<form class="password_change_form">
+		<input type="password" name="password" placeholder="Старый пароль" class="password_old input_area" required>
+		<input type="password" name="password" placeholder="Новый пароль" class="password_old input_area" required>
+		<input type="password" name="password" placeholder="Повторите пароль" class="password_old input_area" required>
+		<div class="change_conainer">
+			<input type="submit" name="password_change_submit" class="password_change_submit" value="Изменить">
+		</div>
+	</form>
+	<form class="email_change_form">
+		<input type="email" name="email" placeholder="Новая почта" class="email_new input_area" required>
+		<div class="change_conainer">
+			<input type="submit" name="email_change_submit" class="email_change_submit" value="Изменить">
+		</div>
+	</form>
+	<form class="nick_change_form">
+		<input type="text" name="text" placeholder="Новый ник" class="nick_new input_area" required>
+		<div class="change_conainer">
+			<input type="submit" name="nick_change_submit" class="nick_change_submit" value="Изменить">
+		</div>
+	</form>
+	<form class="img_change_form">
+		<button class="img_new_file">Выбрать файл</button>
+		<div class="change_conainer">
+			<input type="submit" name="img_change_submit" class="img_change_submit" value="Изменить">
+		</div>
+	</form>
+
+	<section class="page">
+		<div class="user_info">
+			<button class="user_change password_change">Изменить пароль</button>
+			<button class="user_change email_change">Изменить почту</button>
+			<div class="user_img">
+				<img src="images/no_photo.png" alt="" class="user_info_img" width="270" height="405">
+				<button class="user_img_change">Изменить</button>
+			</div>
+			
+			<div class="user_info_text">
+				<div class="user_desrc user_name">Профессор Снег</div>
+				<button class="user_desrc user_name_change">Изменить</button>
+				<div class="user_desrc">Регистранция: <span>Date</div>
+			</div>	
+		</div>
+
+		<button class="user_fav">Избранное</button>
+		<div class="fav_content">
+			<a href="#" class="fav_item"><img src="images/filmPosters/warz.png" alt="" width="135" height="200"></a>
+			<a href="#" class="fav_item"><img src="images/filmPosters/term.png" alt="" width="135" height="200"></a>
+			<a href="#" class="fav_item"><img src="images/filmPosters/warz.png" alt="" width="135" height="200"></a>
+			<a href="#" class="fav_item"><img src="images/filmPosters/logan.png" alt="" width="135" height="200"></a>
+			<a href="#" class="fav_item"><img src="images/filmPosters/america.png" alt="" width="135" height="200"></a>
+			<a href="#" class="fav_item"><img src="images/filmPosters/hollywood.png" alt="" width="135" height="200"></a>
+			<a href="#" class="fav_item"><img src="images/filmPosters/django.png" alt="" width="135" height="200"></a>
+			<a href="#" class="fav_item"><img src="images/filmPosters/term.png" alt="" width="135" height="200"></a>
+			<a href="#" class="fav_item"><img src="images/filmPosters/warz.png" alt="" width="135" height="200"></a>
+			<a href="#" class="fav_item"><img src="images/filmPosters/logan.png" alt="" width="135" height="200"></a>
+			<a href="#" class="fav_item"><img src="images/filmPosters/hollywood.png" alt="" width="135" height="200"></a>
+		</div>
+
+		<div class="user_feed">
+			<div class="review_content">
+				<div class="user_feed_h feed_review"><span>User</span> оставил отзыв на <span>Holly bolly</span>: </div>
+				<div class="review review_good">
+					<div class="review_head">
+						<div class="review_user">
+							<img src="images/ava.png" alt="">
+							<div class="review_user_info">
+								<div class="review_user_nick">Понасёнок</div>
+								<div class="review_user_review_num">9 отзывов</div>
+								<div class="review_date">Опубликовано 9 мая 1945 в 23:01</div>
+							</div>
+						</div>
+						<div class="review_ocenka">
+							<button class="palec palec_vverh">	
+							<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8.75" width="2.5" height="20" fill="#62C041"/><rect x="20" y="8.75" width="2.5" height="20" transform="rotate(90 20 8.75)" fill="#62C041"/></svg></button>
+							<span class="review_up">69</span>
+							<button class="palec palec_vniz"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="8.75" width="2.5" height="20" transform="rotate(90 20 8.75)" fill="#CE0000"/></svg></button>
+							<span class="review_down">12</span>
+						</div>
+					</div>
+					<div class="review_t close" >
+						<div class="review_container">
+							<img src="images/vectors/10stars.png">
+							<h2 class="review_h">Я вас уничтожу. И Антона тоже!</h2>
+							<p class="review_text">Всей швали, моих критиков, моих завистников, вы думаете, что с человеком, который вот до такой степени точно, исследует тему, можно спорить? Вы думаете, что я вас не переиграю, что я вас не уничтожу? Я вас уничтожу.</p>
+							<p class="review_text">Фильм года говорили они, 93% на гнилых помидорах говорили они... Бездарный трэшак без сюжета, с кучей ляпов, допущений и условностей, вот что я увидел, и теперь люто, бешено горю и от самого фильма, и от того, каким местом его смотрели чудо критики, популярные видеоблогеры и прочие, очевидно слепые люди. Но обо всём по порядку.</p>
+							<h2 class="review_h">Щас как ёбну Lorem Ipsum</h2>
+							<p class="review_text">Фильм года говорили они, 93% на гнилых помидорах говорили они... Бездарный трэшак без сюжета, с кучей ляпов, допущений и условностей, вот что я увидел, и теперь люто, бешено горю и от самого фильма, и от того, каким местом его смотрели чудо критики, популярные видеоблогеры и прочие, очевидно слепые люди. Но обо всём по порядку.</p>
+							<p class="review_text">Фильм года говорили они, 93% на гнилых помидорах говорили они... Бездарный трэшак без сюжета, с кучей ляпов, допущений и условностей, вот что я увидел, и теперь люто, бешено горю и от самого фильма, и от того, каким местом его смотрели чудо критики, популярные видеоблогеры и прочие, очевидно слепые люди. Но обо всём по порядку.</p>
+						</div>
+					</div>
+					<div class="review_footer">
+						<button class="show_all_review" onclick="openCom(this)">Показать весь отзыв</button>
+						<button class="close_all_review" onclick="closeCom(this)">Скрыть</button>
+						<button class="review_report">Пожаловаться</button>
+					</div>
+				</div>
+			</div>
+			<div class="review_content">
+				<div class="user_feed_h feed_ocenil_review"><span>User</span> оценил отзыв на <span>Holly bolly</span>: </div>
+				<div class="review review_good">
+					<div class="review_head">
+						<div class="review_user">
+							<img src="images/ava.png" alt="">
+							<div class="review_user_info">
+								<div class="review_user_nick">Понасёнок</div>
+								<div class="review_user_review_num">9 отзывов</div>
+								<div class="review_date">Опубликовано 9 мая 1945 в 23:01</div>
+							</div>
+						</div>
+						<div class="review_ocenka">
+							<button class="palec palec_vverh">	
+							<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8.75" width="2.5" height="20" fill="#62C041"/><rect x="20" y="8.75" width="2.5" height="20" transform="rotate(90 20 8.75)" fill="#62C041"/></svg></button>
+							<span class="review_up">69</span>
+							<button class="palec palec_vniz"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="8.75" width="2.5" height="20" transform="rotate(90 20 8.75)" fill="#CE0000"/></svg></button>
+							<span class="review_down">12</span>
+						</div>
+					</div>
+					<div class="review_t close" >
+						<div class="review_container">
+							<img src="images/vectors/10stars.png">
+							<h2 class="review_h">Я вас уничтожу. И Антона тоже!</h2>
+							<p class="review_text">Всей швали, моих критиков, моих завистников, вы думаете, что с человеком, который вот до такой степени точно, исследует тему, можно спорить? Вы думаете, что я вас не переиграю, что я вас не уничтожу? Я вас уничтожу.</p>
+							<p class="review_text">Фильм года говорили они, 93% на гнилых помидорах говорили они... Бездарный трэшак без сюжета, с кучей ляпов, допущений и условностей, вот что я увидел, и теперь люто, бешено горю и от самого фильма, и от того, каким местом его смотрели чудо критики, популярные видеоблогеры и прочие, очевидно слепые люди. Но обо всём по порядку.</p>
+							<h2 class="review_h">Щас как ёбну Lorem Ipsum</h2>
+							<p class="review_text">Фильм года говорили они, 93% на гнилых помидорах говорили они... Бездарный трэшак без сюжета, с кучей ляпов, допущений и условностей, вот что я увидел, и теперь люто, бешено горю и от самого фильма, и от того, каким местом его смотрели чудо критики, популярные видеоблогеры и прочие, очевидно слепые люди. Но обо всём по порядку.</p>
+							<p class="review_text">Фильм года говорили они, 93% на гнилых помидорах говорили они... Бездарный трэшак без сюжета, с кучей ляпов, допущений и условностей, вот что я увидел, и теперь люто, бешено горю и от самого фильма, и от того, каким местом его смотрели чудо критики, популярные видеоблогеры и прочие, очевидно слепые люди. Но обо всём по порядку.</p>
+						</div>
+					</div>
+					<div class="review_footer">
+						<button class="show_all_review" onclick="openCom(this)">Показать весь отзыв</button>
+						<button class="close_all_review" onclick="closeCom(this)">Скрыть</button>
+						<button class="review_report">Пожаловаться</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="footer">
+		<div class="footer_site_label">VideoDerby</div>
+		<div class="trash">
+			<div class="copy">© 2020 VideoDerby</div>
+			<div class="socials">
+				<a href="#"><img src="images/icons/vk.png" alt=""></a>
+				<a href="#"><img src="images/icons/instagram.png" alt=""></a>
+				<a href="#"><img src="images/icons/twitter.png" alt=""></a>
+				<a href="#"><img src="images/icons/facebook.png" alt=""></a>
+			</div>
+			<div class="maded">Разработано: <span>Долбоёбами ИПЭКа</span></div>
+		</div>
+	</footer>
+
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/jquery.raty.js"></script>
+	<script src="js/slick.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>

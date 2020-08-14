@@ -182,3 +182,87 @@ $('.review_star').raty({
 	starOn: 'images/vectors/staron.png',
 	starOff: 'images/vectors/staroff.png'
 })
+
+$('.user_fav').click(function(){
+	$('.fav_content').toggleClass('user_active')
+})
+$('.password_change').click(function(){
+	$('.password_change_form').addClass('user_active')
+	var docHeight = $(document).height();
+   	$("body").append("<div class='overlay'></div>");
+   	$(".overlay")
+      	.height(docHeight)
+      	.css({
+         	'opacity' : 0.4,
+         	'position': 'absolute',
+         	'top': 0,
+         	'left': 0,
+         	'background-color': 'black',
+         	'width': '100%',
+         	'z-index': 5000
+      	});
+    $(".overlay").on("click", function () {
+		$(".overlay").remove()
+		$('.password_change_form').removeClass('user_active')
+	})
+});
+$('.email_change').click(function(){
+	$('.email_change_form').addClass('user_active')
+	var docHeight = $(document).height();
+   	$("body").append("<div class='overlay'></div>");
+   	$(".overlay")
+      	.height(docHeight)
+      	.css({
+         	'opacity' : 0.4,
+         	'position': 'absolute',
+         	'top': 0,
+         	'left': 0,
+         	'background-color': 'black',
+         	'width': '100%',
+         	'z-index': 5000
+      	});
+    $(".overlay").on("click", function () {
+		$(".overlay").remove()
+		$('.email_change_form').removeClass('user_active')
+	})
+});
+$('.user_img_change').click(function(){
+	$('.img_change_form').addClass('user_active')
+	var docHeight = $(document).height();
+   	$("body").append("<div class='overlay'></div>");
+   	$(".overlay")
+      	.height(docHeight)
+      	.css({
+         	'opacity' : 0.4,
+         	'position': 'absolute',
+         	'top': 0,
+         	'left': 0,
+         	'background-color': 'black',
+         	'width': '100%',
+         	'z-index': 5000
+      	});
+    $(".overlay").on("click", function () {
+		$(".overlay").remove()
+		$('.img_change_form').removeClass('user_active')
+	})
+});
+$('.user_name_change').click(function(){
+	$('.nick_change_form').addClass('user_active')
+	var docHeight = $(document).height();
+   	$("body").append("<div class='overlay'></div>");
+   	$(".overlay")
+      	.height(docHeight)
+      	.css({
+         	'opacity' : 0.4,
+         	'position': 'absolute',
+         	'top': 0,
+         	'left': 0,
+         	'background-color': 'black',
+         	'width': '100%',
+         	'z-index': 5000
+      	});
+    $(".overlay").on("click", function () {
+		$(".overlay").remove()
+		$('.nick_change_form').removeClass('user_active')
+	})
+});
