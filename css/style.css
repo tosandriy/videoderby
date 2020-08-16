@@ -2121,3 +2121,21 @@ h2 {
 .user_info_text label {
 	margin-bottom: 10px;
 }
+.form-control-file {
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: bold;
+	z-index: 100;
+	width: 150px;
+	height: 40px;
+	background: #1e1e1e;
+	border: none;
+	outline: none;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 21px;
+	color: rgba(255,255,255,0.7);
+	display: inline-block;
+	transition: 0.1s;
+	border-radius: 5px;
+}
