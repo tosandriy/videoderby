@@ -2105,13 +2105,19 @@ h2 {
 }
 
 .form-control {
-	font-size: 18px;
-	width: 400px;
-	height: 40px;
+	font-size: 14px;
+	width: 300px;
+	max-height: 40px;
 	border-radius: 5px;
 	border: 1px #444444 solid;
 	padding: 0 10px;
 	margin-bottom: 20px;
 	background-color: #444444;
 	color: #fff;
+}
+.user_info_text .user_desrc {
+	margin-bottom: 10px;
+}
+.user_info_text label {
+	margin-bottom: 10px;
 }
