@@ -2107,35 +2107,19 @@ h2 {
 .form-control {
 	font-size: 14px;
 	width: 300px;
-	max-height: 40px;
+	height: 40px;
 	border-radius: 5px;
 	border: 1px #444444 solid;
 	padding: 0 10px;
 	margin-bottom: 20px;
 	background-color: #444444;
 	color: #fff;
+	margin-top: 10px;
 }
 .user_info_text .user_desrc {
 	margin-bottom: 10px;
 }
-.user_info_text label {
-	margin-bottom: 10px;
-}
 .form-control-file {
-	font-family: Roboto;
-	font-style: normal;
-	font-weight: bold;
-	z-index: 100;
-	width: 150px;
-	height: 40px;
-	background: #1e1e1e;
-	border: none;
-	outline: none;
-	font-weight: bold;
-	font-size: 14px;
-	line-height: 21px;
-	color: rgba(255,255,255,0.7);
-	display: inline-block;
-	transition: 0.1s;
-	border-radius: 5px;
+	margin-top: 10px;
 }
+
