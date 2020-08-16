@@ -1826,8 +1826,8 @@ h2 {
 	width: 100%;
 }
 .user_info_img {
-	max-width: 270px;
-	max-height: 405px;
+	width: 270px;
+	height: 405px;
 	margin-right: 30px;
 	border-radius: 5px;
 }
@@ -2102,16 +2102,4 @@ h2 {
 .user_feed_h {
 	margin-bottom: -20px;
 	margin-top: 20px;
-}
-
-.form-control {
-	font-size: 18px;
-	width: 400px;
-	height: 40px;
-	border-radius: 5px;
-	border: 1px #444444 solid;
-	padding: 0 10px;
-	margin-bottom: 20px;
-	background-color: #444444;
-	color: #fff;
 }
