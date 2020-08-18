@@ -322,9 +322,6 @@ h2 {
 	background: none;
 	margin-left: 20px;
 }
-.add {
-	margin-left: 32px;
-}
 
 
 /* slider with films */
@@ -2141,5 +2138,22 @@ h2 {
 }
 
 .like {
-	background: url();
+	background: url(../images/vectors/heartW.png);
+	width: 33px;
+	height: 33px;
+	background-repeat: no-repeat;
+	margin-top: 0px;
+}
+.like_pressed {
+	background: url(../images/vectors/heartR.png);
+}
+.add {
+	background: url(../images/vectors/addW.png);
+	width: 40px;
+	height: 40px;
+	background-repeat: no-repeat;
+}
+.top_slider_info_right .like {
+	margin-top: 3px;
+	margin-right: 5px;
 }

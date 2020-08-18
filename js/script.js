@@ -266,3 +266,7 @@ $('.user_name_change').click(function(){
 		$('.nick_change_form').removeClass('user_active')
 	})
 });
+
+$(document).on("click", ".like", function() {
+  alert("123");
+});
