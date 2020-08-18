@@ -267,6 +267,6 @@ $('.user_name_change').click(function(){
 	})
 });
 
-$(document).on("click", ".like", function() {
-  alert("123");
-});
+// $(document).on("click", ".like", function() {
+//   alert("123");
+// });
