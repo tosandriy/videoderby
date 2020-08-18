@@ -44,13 +44,15 @@
 			</div>
 		</div>
 	</div>
+
+
 	<section class="page">
 		
 
 		<div class="film_info">
-			<div class="film_rating positively">9.8</div>
+			<div class="film_rating positively" onclick="errorMes('error', 'succes')">9.8</div>
 			<div class="poster_btns">
-				<img src="images/films/babydriver/poster.png" alt="" class="film_info_img" width="270" height="405">
+				<img src="images/films/babydriver/poster.png" alt="" class="film_info_img" width="270" height="405" onclick="errorMes('error', 'error')">
 				<div class="like_add">
 					<button class="film_like"><div class="like" onclick="$(this).toggleClass('like_pressed')"></div></button>
 					<button class="film_add"><div class="add"></div></button>
@@ -85,12 +87,8 @@
 				<button class="tabBtn">Фильм</button>
 			</div>
 			<div class="tab_content">
-				<div class="film_player tab_item" id="trailer">
-					<div id="kinoplayertop" data-player="trailer" data-kinopoisk="902939"></div> 
-				</div>
-				<div class="film_player tab_item" id="film">
-					<div id="kinoplayertop" data-player="torrent" data-kinopoisk="902939"></div> 
-				</div>
+				
+				
 			</div>
 		</div>
 		

@@ -2157,3 +2157,19 @@ h2 {
 	margin-top: 3px;
 	margin-right: 5px;
 }
+
+
+.messege {
+	position: fixed;
+	bottom: 10px;
+	left: 10px;
+	color: #fff;
+	padding: 10px;
+	border-radius: 5px;
+}
+.error {
+	background: #CE0000;
+}
+.succes {
+	background: #00811C;
+}

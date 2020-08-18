@@ -267,6 +267,19 @@ $('.user_name_change').click(function(){
 	})
 });
 
-// $(document).on("click", ".like", function() {
-//   alert("123");
-// });
+function errorMes(text, type) {
+	if (type == 'succes') {
+		var $newError = $("<div class='messege succes'><p class='messege_text'></p></div>")
+	}
+	else if (type == 'error') {
+		var $newError = $("<div class='messege error'><p class='messege_text'></p></div>")
+	}
+	$newError.appendTo("body")
+	var errorWindow = $('.messege')
+	var errorText = $('.messege_text')
+	errorText.text(text);
+	errorWindow.delay(2000).fadeOut(1000);
+	setTimeout(function () {
+		$('.messege').remove();
+	}, 3000)
+}
