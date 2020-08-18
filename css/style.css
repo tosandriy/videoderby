@@ -1855,8 +1855,6 @@ h2 {
 	background: none;
 }
 .user_change {
-	position: absolute;
-	right:0px;
 	font-family: Roboto;
 	font-style: normal;
 	font-weight: bold;
@@ -1875,6 +1873,7 @@ h2 {
 	padding: 0;
 	transition: 0.1s;
 	border-radius: 5px;
+	margin-top: 10px;
 }
 .user_change:hover{
 	background-color: #444444;
@@ -2124,7 +2123,7 @@ h2 {
 .form-control-file {
 	display: none;
 }
-#div_id_pictur label {
+#div_id_picture label {
 	color: #fff;
 	font-size: 18px;
 	height: 40px;
@@ -2139,4 +2138,8 @@ h2 {
 	width: 150px;
 	align-items: center;
 	justify-content: center;	
+}
+
+.like {
+	background: url();
 }
