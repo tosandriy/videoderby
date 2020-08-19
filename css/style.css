@@ -534,6 +534,8 @@ h2 {
 	padding: 10px 20px;
 	border-radius: 5px;
 	transition: background-color 0.1s;
+	border: none;
+	color: #fff;
 }
 .films_select:hover{
 	background-color: #444444
