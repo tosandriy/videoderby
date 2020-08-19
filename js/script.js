@@ -168,10 +168,10 @@ $(document).mouseup(function (e){
 		$(".select_list").removeClass("list-open")
 	}
 });
-$(".select_list_item").children("label").click(function(){
-	$(".films_select").removeClass("films_select_open")
-	$(".select_list").removeClass("list-open")
-})
+// $(".select_list_item").children("label").click(function(){
+// 	$(".films_select").removeClass("films_select_open")
+// 	$(".select_list").removeClass("list-open")
+// })
 $(window).on("load",function(){
 	$(".select_list").mCustomScrollbar({
 		scrollInertia:300
