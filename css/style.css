@@ -52,7 +52,7 @@ body {
 
 }
 .page {
-	
+	margin-top: 64px;
 	margin-right: auto;
     margin-left: auto;
     position: relative;
@@ -94,8 +94,7 @@ h2 {
 	display: flex;
 	margin-right: auto;
 	margin-left: auto;
-	width: 100%;
-	max-width: 1000px;
+	max-width: 1200px;
 	align-items: center;
 	position: relative;
 }
@@ -1923,6 +1922,26 @@ h2 {
 	margin-top: 50px;
 	margin-left: 40px;
 }
+.user_later {
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: bold;
+	z-index: 100;
+	width: 190px;
+	height: 50px;
+	border: none;
+	outline: none;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 21px;
+	background: #CE0000;
+	color: #fff;
+	transition: 0.1s;
+	border-radius: 5px;
+	margin-top: 50px;
+	margin-left: 40px;
+	padding: 15px;
+}
 .user_img_change:hover{
 	background-color: #444444;
 	color: rgba(255,255,255,1);
@@ -2142,13 +2161,21 @@ h2 {
 	width: 33px;
 	height: 33px;
 	background-repeat: no-repeat;
-	margin-top: 0px;
 }
 .like_pressed {
 	background: url(../images/vectors/heartR.png);
+	background-repeat: no-repeat;
+	width: 33px;
+	height: 33px;
 }
 .add {
 	background: url(../images/vectors/addW.png);
+	width: 40px;
+	height: 40px;
+	background-repeat: no-repeat;
+}
+.add_pressed {
+	background: url(../images/vectors/addR.png);
 	width: 40px;
 	height: 40px;
 	background-repeat: no-repeat;
@@ -2172,4 +2199,45 @@ h2 {
 }
 .succes {
 	background: #00811C;
+}
+
+.notif {
+	position: absolute;
+	right: -50px;
+	top: 20px;
+}
+.notifBtn {
+	width: 30px;
+	height: 30px;
+	background: #CE0000;
+	border: none;
+	outline: none;
+}
+.notifList {
+	position: absolute;
+	background: #444;
+	width: 300px;
+	max-height: 500px;
+	min-height: 500px;
+	border-radius: 5px;
+	margin-top: 20px;
+	right: 0;
+	display: none;
+	border: 1px solid #000;
+}
+.notifNote {
+	max-width: 100%;
+	border-bottom: #000 solid 1px;
+	padding: 10px;
+	display: flex;
+	align-items: center;
+}
+.notifAvatar {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-right: 5px;
+}
+.notifListOpen {
+	display: block;
 }

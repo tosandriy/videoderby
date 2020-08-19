@@ -27,8 +27,21 @@
 				<a href="/logout/" class="login">ВЫЙТИ</a>
 				
 				<a href="/profile/" class="profile">ПРОФИЛЬ</a>
+				
+				<div class="notif">
+					<button class="notifBtn" onclick="notifOpen()"></button>
+					<div class="notifList">
+    					<div class="notifNote">
+    						<img src="images/666.jpg" alt="" class="notifAvatar">
+    						<span class="notifHead">User оценил ваш отзыв</span>
+    					</div>
+    				</div>
+				</div>
+				
 			</div>
 		</div>
+
+		
 	</header>
 
     
@@ -92,8 +105,10 @@ Change:
 				<button type="submit" class="user_change">Изменить</button>
 			</form>
 		</div>
-
-		<button class="user_fav">Избранное</button>
+		<div class="user_btns">
+			<button class="user_fav">Избранное</button>
+			<a href="#" class="user_later">Посмотреть позже</a>
+		</div>
 		<div class="fav_content">
 			<a href="#" class="fav_item"><img src="images/filmPosters/warz.png" alt="" width="135" height="200"></a>
 			<a href="#" class="fav_item"><img src="images/filmPosters/term.png" alt="" width="135" height="200"></a>
@@ -204,10 +219,10 @@ Change:
 			<div class="maded">Разработано: <span>Долбоёбами ИПЭКа</span></div>
 		</div>
 	</footer>
-	<script src="/static/js/jquery-3.3.1.min.js"></script>
-	<script src="/static/js/jquery.raty.js"></script>
-	<script src="/static/js/slick.js"></script>
-	<script src="/static/js/script.js"></script>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/jquery.raty.js"></script>
+	<script src="js/slick.js"></script>
+	<script src="js/script.js"></script>
     <script>
          
     </script>

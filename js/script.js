@@ -283,3 +283,8 @@ function errorMes(text, type) {
 		$('.messege').remove();
 	}, 3000)
 }
+
+
+function notifOpen(){
+	$(".notifList").toggleClass("notifListOpen")
+}
