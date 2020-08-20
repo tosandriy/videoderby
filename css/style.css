@@ -61,6 +61,7 @@ body {
     font-style: normal;
     width: 100%;
 	max-width: 1000px;
+	min-height: calc(100vh - 255px);
 }
 button:hover {
 	cursor: pointer;
@@ -114,14 +115,14 @@ h2 {
 }
 
 .header__nav {
-	margin-left: 45px;
+	margin-left: 70px;
 	font-size: 14px;
 	line-height: 16px;
 	align-items: center;
 	display: flex;
 }
 .header__nav a {
-	margin-right: 36px;
+	margin-right: 70px;
 	height: 100%;
 	padding-top: 22px;
 	border-bottom: #1e1e1e 2px solid;
@@ -159,17 +160,33 @@ h2 {
 	outline: none;
 }
 .login {
-	margin-left: 65px;
+	margin-left: 20px;
 	font-size: 14px;
 	line-height: 16px;
 	margin-right: 5px;
+	min-height: 100%;
+	border-bottom: #1e1e1e 2px solid;
+	transition: 0.3s;
+	padding-bottom: 23px;
+	padding-top: 23px;
 }
 .profile {
-	margin-right: 5px;
+	margin-left: 20px;
 	font-size: 14px;
 	line-height: 16px;
+	border-bottom: #1e1e1e 2px solid;
+	transition: 0.3s;
+	padding-bottom: 23px;
+	padding-top: 23px;
 }
-
+.login:hover {
+	color: #CE0000;
+	border-bottom: #CE0000 2px solid;
+}
+.profile:hover {
+	color: #CE0000;
+	border-bottom: #CE0000 2px solid;
+}
 /*footer*/
 .footer {
 	display: flex;
@@ -2212,14 +2229,19 @@ h2 {
 }
 
 .notif {
-	
+	margin-left: 20px;
 }
 .notifBtn {
 	width: 30px;
 	height: 30px;
-	background: #CE0000;
+	background: url(../images/vectors/notif.png);
+	background-repeat: no-repeat;
 	border: none;
 	outline: none;
+}
+.notifBtnActive {
+	background: url(../images/vectors/notifA.png);
+	background-repeat: no-repeat;
 }
 .notifList {
 	position: absolute;
