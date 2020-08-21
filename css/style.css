@@ -2230,6 +2230,8 @@ h2 {
 
 .notif {
 	margin-left: 20px;
+	position: absolute;
+	right: -20%;
 }
 .notifBtn {
 	width: 30px;
@@ -2246,18 +2248,21 @@ h2 {
 .notifList {
 	position: absolute;
 	background: #444;
-	width: 300px;
+	width: 350px;
 	max-height: 500px;
 	min-height: 500px;
-	border-radius: 5px;
 	margin-top: 20px;
 	right: 0;
 	display: none;
-	border: 1px solid #000;
+}
+.notifListUL {
+	list-style: none;
+	overflow-y: scroll;
+	max-height: 500px;
+	min-height: 500px;
 }
 .notifNote {
 	max-width: 100%;
-	border-bottom: #000 solid 1px;
 	padding: 10px;
 	display: flex;
 	align-items: center;

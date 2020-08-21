@@ -285,18 +285,19 @@ function errorMes(text, type) {
 }
 
 $(document).on('click', '.notifBtn',function() {
-	$(".notifList").toggleClass("notifListOpen")
+	if ($('.notifList').css('display') == 'none') {
+		$('.notifList').show(400)
+	}
+	else {
+		$('.notifList').hide(400)
+	}
 })
 $(document).mouseup(function (e){ 
 	var div = $(".notifList"); 
 	if (!div.is(e.target) && div.has(e.target).length === 0) {
-		$(".notifList").removeClass("notifListOpen")
+		$(".notifList").hide(400)
 	}
 });
-function notifToggleActiv(){
-	$('.notifBtn').toggleClass('notifBtnActive')
-}
-
 
 $('.slider_frame').click(function(){
 	var docHeight = $(document).height();
