@@ -95,7 +95,7 @@ h2 {
 	display: flex;
 	margin-right: auto;
 	margin-left: auto;
-	max-width: 1200px;
+	max-width: 1400px;
 	align-items: center;
 	position: relative;
 }
@@ -158,9 +158,9 @@ h2 {
 	padding-right: 15px;
 	border: none;
 	outline: none;
+	margin-right: 120px;
 }
 .login {
-	margin-left: 20px;
 	font-size: 14px;
 	line-height: 16px;
 	margin-right: 5px;
@@ -171,20 +171,27 @@ h2 {
 	padding-top: 23px;
 }
 .profile {
-	margin-left: 20px;
 	font-size: 14px;
 	line-height: 16px;
 	border-bottom: #1e1e1e 2px solid;
 	transition: 0.3s;
-	padding-bottom: 23px;
-	padding-top: 23px;
+	padding-bottom: 13px;
+	padding-top: 13px;
+	display: flex;
+	align-items: center;
+	margin-right: 30px;
+}
+.profileAvaS {
+	height: 35px;
+	width: 35px;
+	border-radius: 50%;
+	margin-right: 5px;
 }
 .login:hover {
 	color: #CE0000;
 	border-bottom: #CE0000 2px solid;
 }
 .profile:hover {
-	color: #CE0000;
 	border-bottom: #CE0000 2px solid;
 }
 /*footer*/
@@ -2231,7 +2238,7 @@ h2 {
 .notif {
 	margin-left: 20px;
 	position: absolute;
-	right: -20%;
+	right: -10%;
 }
 .notifBtn {
 	width: 30px;
