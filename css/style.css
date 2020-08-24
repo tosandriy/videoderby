@@ -2276,6 +2276,7 @@ h2 {
 	padding: 10px;
 	display: flex;
 	align-items: center;
+	background: #1e1e1e;
 }
 .notifAvatar {
 	width: 50px;
@@ -2285,4 +2286,8 @@ h2 {
 }
 .notifListOpen {
 	display: block;
+}
+
+.newNotif {
+	background: #444;
 }
