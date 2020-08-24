@@ -2291,3 +2291,6 @@ h2 {
 .newNotif {
 	background: #444;
 }
+.notifHead span {
+	color: #CE0000;
+}
