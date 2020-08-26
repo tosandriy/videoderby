@@ -2237,14 +2237,18 @@ h2 {
 	margin-right: 5px;
 }
 
-
-.messege {
+.messeges {
 	position: fixed;
 	bottom: 10px;
 	left: 10px;
+	width: 200px;
+	height: 100%;
+}
+.messege {
 	color: #fff;
 	padding: 10px;
 	border-radius: 5px;
+	width: 200px;
 }
 .error {
 	background: #CE0000;
@@ -2272,7 +2276,6 @@ h2 {
 }
 .notifList {
 	position: absolute;
-	background: #444;
 	width: 350px;
 	max-height: 500px;
 	min-height: 500px;

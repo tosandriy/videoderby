@@ -267,21 +267,31 @@ $('.user_name_change').click(function(){
 	})
 });
 
-function errorMes(text, type) {
-	if (type == 'succes') {
-		var $newError = $("<div class='messege succes'><p class='messege_text'></p></div>")
-	}
-	else if (type == 'error') {
-		var $newError = $("<div class='messege error'><p class='messege_text'></p></div>")
-	}
-	$newError.appendTo("body")
-	var errorWindow = $('.messege')
-	var errorText = $('.messege_text')
-	errorText.text(text);
-	errorWindow.delay(2000).fadeOut(1000);
-	setTimeout(function () {
-		$('.messege').remove();
-	}, 3000)
+// window.onload = function() {
+// 	var errorList = $('<div class="messeges"></div>')
+// 	errorList.appendTo('body')
+// }
+// function errorMes(text, type) {
+// 	if (type == 'succes') {
+// 		var $newError = $("<div class='messege succes'><p class='messege_text'></p></div>")
+// 	}
+// 	else if (type == 'error') {
+// 		var $newError = $("<div class='messege error'><p class='messege_text'></p></div>")
+// 	}
+// 	$newError.appendTo(".messeges")
+// 	var errorWindow = $('.messege')
+// 	var errorText = $('.messege_text')
+// 	errorText.text(text);
+// 	errorWindow.delay(2000).fadeOut(1000);
+// }
+function errorMes(text, heading, icon) {
+	$.toast({
+	    heading: heading, //Принимает:  Information, Error, Warning, Success
+	    text: text, //текст
+	    loader: true, // есть ли убывающая линия
+	    loaderBg: '#9EC600', // бг для убывающей линии
+	    icon: icon //Принимает:  info, error, warning, success
+	})
 }
 
 $(document).on('click', '.notifBtn',function() {
