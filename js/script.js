@@ -286,7 +286,7 @@ $('.user_name_change').click(function(){
 // }
 function errorMes(text, heading, icon) {
 	$.toast({
-	    heading: heading, //Принимает:  Information, Error, Warning, Success
+	    heading: heading, //Принимает:  Хоть что
 	    text: text, //текст
 	    loader: true, // есть ли убывающая линия
 	    loaderBg: '#9EC600', // бг для убывающей линии
