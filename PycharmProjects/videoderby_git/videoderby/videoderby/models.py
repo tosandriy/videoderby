@@ -5,28 +5,10 @@ from . import choices
 from django.utils.timezone import now
 from django.contrib.postgres import fields
 from django.contrib.auth.models import User
-from django.core.files.temp import NamedTemporaryFile
 from django.core.files import File
-import os
 from urllib import request
-
-
-class Actor(models.Model):
-    name = models.CharField(max_length=80)
-    photo = models.ImageField(upload_to='videoderby/media/ActorPhotos', default='no_photo.png')
-    facts = fields.ArrayField(models.CharField(max_length=90))
-    kp_table = models.TextField()
-
-    def __str__(self):
-        return self.name
-
-
-class Images(models.Model):
-    actor = models.ForeignKey(to=Actor, on_delete=models.CASCADE, related_name='photogallery')
-    image = models.ImageField(upload_to='videoderby/media/ActorPhotos', default='no_photo.png')
-
-    def __str__(self):
-        return self.actor.name
+from django.urls import reverse
+from PIL import Image
 
 
 class Director(models.Model):
@@ -40,22 +22,33 @@ class Director(models.Model):
 class Movie(models.Model):
     poster = models.ImageField(upload_to='videoderby/media/images/filmPosters', default='no_photo.png')
     name = models.CharField(max_length=200)
-    year = models.CharField(max_length=10)
+    year = models.IntegerField(null=True)
+    movie_likes = models.ManyToManyField(to=User, related_name='wish_list')
+    watch_later = models.ManyToManyField(to=User, related_name='watch_later')
     genre = fields.ArrayField(models.CharField(choices=choices.GENRE_CHOICES, max_length=20))
     description = models.TextField(default='')
     actors = fields.ArrayField(models.CharField(max_length=200))
     director = fields.ArrayField(models.CharField(max_length=200))
     duration = models.CharField(max_length=50)
     rating = models.FloatField(validators=[validators.validate_lte_10])
-    country = fields.ArrayField(models.CharField(choices=choices.COUNTRYS, max_length=150))
+    country = fields.ArrayField(models.CharField(choices=choices.COUNTRIES, max_length=150))
     kp_id = models.IntegerField()
     series = models.BooleanField(default=True)
     release = models.DateField(default=now)
-    compositor = fields.ArrayField(models.CharField(max_length=200))
+    compositor = fields.ArrayField(models.CharField(max_length=200), null=True)
+    local_rating = models.FloatField(default=0)
+    local_rating_count = models.FloatField(default=0)
 
+    def append_rating(self,rate):
+        self.local_rating = (self.local_rating_count * self.local_rating + rate) / (self.local_rating_count + 1)
+        self.local_rating_count += 1
+        self.save()
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse("film", kwargs={"movie_pk": self.pk})
 
 
 class MovieImage(models.Model):
@@ -64,23 +57,23 @@ class MovieImage(models.Model):
 
 
 class Comment(models.Model):
-    user = models.OneToOneField(User,on_delete=models.CASCADE)
+    user = models.ForeignKey(to=User,on_delete=models.CASCADE,related_name="comments")
     comment_header = models.CharField(max_length=100)
     comment = models.CharField(max_length=800)
     addressed_to = models.ForeignKey(to=Movie, on_delete=models.CASCADE, related_name="comments")
-    rate = models.FloatField()
-    published = models.TimeField(auto_now=True)
-    total_likes = models.IntegerField()
-    total_dislikes = models.IntegerField()
+    rate = models.IntegerField()
+    published = models.DateTimeField(default=now)
+    total_likes = models.ManyToManyField(to=User,related_name="likes_comment", blank=True)
+    total_dislikes = models.ManyToManyField(to=User,related_name="dislikes_comment", blank=True)
 
+    def __str__(self):
+        return self.comment_header
 
-class SlaveComment(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    comment = models.CharField(max_length=800)
-    addressed_to = models.ForeignKey(to=Comment, on_delete=models.CASCADE, related_name="comments")
-    published = models.TimeField(auto_now=True)
-    total_likes = models.IntegerField()
-    total_dislikes = models.IntegerField()
+    def get_api_like_url(self,):
+        return reverse("like_comment_api",kwargs={"comment_pk": self.pk,"action": "like"})
+
+    def get_api_dislike_url(self,):
+        return reverse("like_comment_api",kwargs={"comment_pk": self.pk,"action": "dislike"})
 
 
 class Teaser(models.Model):
@@ -89,16 +82,50 @@ class Teaser(models.Model):
     movie = models.OneToOneField(to=Movie, related_name='teaser', on_delete=models.CASCADE)
     upload = models.DateField(default=now)
 
+    def __str__(self):
+        return self.title
+
 
 class WishList(models.Model):
-    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE,related_name="user_wish_list")
     movies = fields.ArrayField(models.CharField(max_length=80))
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(to=User,on_delete=models.CASCADE,related_name="profile")
+    picture = models.ImageField(upload_to="images/UserPictures",default="videoderby/media/images/no_photo.png")
+    liked_comments = models.ManyToManyField(to=Comment,related_name="likes",blank=True)
+    disliked_comments = models.ManyToManyField(to=Comment,related_name="dislikes",blank=True)
+    liked_films = models.ManyToManyField(to=Movie,related_name="likes",blank=True)
+
+    def save(self,*args, **kwargs):
+        super().save(*args,**kwargs)
+
+        img = Image.open(self.picture.path)
+
+        if img.height > 300 or img.width > 300:
+            output_size = (300, 300)
+            img.thumbnail(output_size)
+            img.save(self.picture.path)
+
+
+class Notification(models.Model):
+    from_user = models.ForeignKey(User,on_delete=models.CASCADE)
+    to_user = models.ForeignKey(User,on_delete=models.CASCADE,related_name='user_notifications')
+    action = models.BooleanField()
+    checked = models.BooleanField(default=False)
+    comment = models.ForeignKey(to=Comment,on_delete=models.CASCADE,null=True)
+
+    def __str__(self):
+        return self.to_user.username
 
 
 def create_movie(poster, name, year, genre, description, actors,
                  director, duration, rating, country, kp_id, images, compositor, series=False, ):
-    """Функция для автоматического добавления фильмов на сайт, я храню ее в моделях, т.к. я не знаю куда ее пихнуть,
-     чтобы она работала и смотрелось красиво, так что оставил ее тут"""
+    """
+    Функция для автоматического добавления фильмов на сайт, я храню ее в моделях, т.к. я не знаю куда ее пихнуть,
+    чтобы она работала и смотрелось красиво, так что оставил ее тут
+    """
     movie = Movie(name=name, year=year, genre=list(genre), description=description, actors=list(actors),
                   director=list(director), duration=int(duration), rating=rating, country=list(country),
                   kp_id=kp_id, series=bool(series), compositor=list(compositor))

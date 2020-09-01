@@ -31,9 +31,12 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'videoderby',
+    'channels',
+    'rest_framework',
+    'videoderby.apps.VideoderbyConfig',
     'django.contrib.admin',
     'django.contrib.auth',
+    'notifications',
     'crispy_forms',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -74,6 +77,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'videoderby.wsgi.application'
 
+ASGI_APPLICATION = "videoderby.routing.application"
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
@@ -114,7 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
@@ -123,10 +127,12 @@ USE_L10N = True
 USE_TZ = True
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+SITE_ID=1
 
-LOGIN_REDIRECT_URL = 'index'
 
-STATIC_DIR = os.path.join(BASE_DIR, 'static')
+LOGIN_REDIRECT_URL = 'first_index_page'
+
+STATIC_DIR = os.path.join(BASE_DIR, '/static/')
 STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
@@ -134,3 +140,14 @@ MEDIA_ROOT = (
     os.path.join(BASE_DIR, 'media')
 )
 
+# Channels
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("localhost", 6379)],
+        },
+    },
+}
+
+# email verification

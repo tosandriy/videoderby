@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="{% static 'css/slick.css' %}">
 	<link rel="stylesheet" href="{% static 'css/slick-theme.css' %}">
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/jquery.toast.css' %}">
 	<link href="https://fonts.googleapis.com/css2?family=Mina:wght@400;700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
@@ -18,13 +19,45 @@
 				<a href="/" class="site_name">VideoDerby</a>
 
 				<nav class="header__nav">
-					<a href="#" id="films">ФИЛЬМЫ</a>
+					<a href="{% url 'films'%}" id="films">ФИЛЬМЫ</a>
 					<a href="#" id="serials">СЕРИАЛЫ</a>
-					<a href="#" id="afisha">АФИША</a>
 				</nav>
 			</div>
 			<div class="header__right">
-				<input type="text" class="search" placeholder="Поиск...">
+				<form method="get">
+				<input type="text" class="search" name="search" placeholder="Поиск...">
+				<input type="submit" hidden>
+				</form>
+				<div class="notif">
+					<button class="notifBtn {% if notifications2 %}notifBtnActive{% endif %}" ></button>
+					<div class="notifList">
+						<ul class="notifListUL">
+							<li class="selector_class">
+								{% for notification in notifications2 %}
+								<div class="notifNote newNotif">
+    								<img src="{{notification.from_user.profile.picture.url}}" alt="" class="notifAvatar">
+									<span class="notifHead"><span>{{notification.from_user.username}}</span> поставил Лайк на ваш комментарий под фильмом <span>{{notification.comment.addressed_to}}</span></span>
+    							</div>
+								{% endfor %}
+
+								{% for notification in notifications %}
+								<div class="notifNote">
+    								<img src="{{notification.from_user.profile.picture.url}}" alt="" class="notifAvatar">
+    								<span class="notifHead">{{notification.from_user.username}} поставил Лайк на ваш комментарий под фильмом {{notification.comment.addressed_to}}</span>
+    							</div>
+								{% endfor %}
+    						</li>
+
+						</ul>
+
+    				</div>
+				</div>
+				{% if user.is_authenticated %}
+				<a href="{% url 'profile' %}" class="profile">
+					<img src="{{user.profile.picture.url}}" alt="" class="profileAvaS">
+					<span class="profileName">{{user.username|truncatechars:20}}</span>
+				</a>
+				{% endif %}
 				{% if user.is_authenticated %}
 				<a href="{% url 'logout' %}" class="login">ВЫЙТИ</a>
 				{% else %}
@@ -32,6 +65,7 @@
 				<a href="{% url 'login' %}" class="login">ВОЙТИ</a>
 
 				{% endif %}
+
 			</div>
 		</div>
 	</header>
@@ -39,7 +73,7 @@
     {% block content %}
 
 
-    {% endblock %}
+    {% endblock content %}
 
 
 	<footer class="footer">
@@ -55,9 +89,48 @@
 			<div class="maded">Разработано: <span>Долбоёбами ИПЭКа</span></div>
 		</div>
 	</footer>
-
 	<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+	<script src="{% static 'js/jquery.raty.js' %}"></script>
+	<script src="{% static 'js/jquery.toast.js' %}"></script>
 	<script src="{% static 'js/slick.js' %}"></script>
 	<script src="{% static 'js/script.js' %}"></script>
+	<script src="{% static 'js/websocketbridge.js' %}"></script>
+    <script>
+        {% block script %} {% endblock script %}
+    </script>
+	<script>
+			$(".notifBtn").click(function(e){
+				var this_ = $(this)
+				this.className = "notifBtn"
+				$.ajax({
+          	url: "/api/clear_notifications/",
+          	method: "GET",
+    		data: {}
+            });
+})
+	</script>
+	<script>
+
+
+		    document.addEventListener('DOMContentLoaded', function() {
+      const webSocketBridge = new channels.WebSocketBridge();
+      const nl = document.querySelector(".selector_class");
+      webSocketBridge.connect('/notifications/');
+      webSocketBridge.listen(function(action, stream) {
+        console.log("RESPONSE:", action);
+        if(action.event == "Liked comment of {{user.username}}") {
+          var theFirstChild = nl.firstChild;
+          var el = document.createElement("div");
+          el.className = 'notifNote newNotif';
+          el.innerHTML = '<img src="' + action.image_url + '" alt="" class="notifAvatar"><span class="notifHead"><span>' + action.username + '</span> поставил Лайк на ваш комментарий под фильмом <span>' + action.movie_name + '</span>';
+          nl.insertBefore(el, theFirstChild);
+          var bell = document.querySelector(".notifBtn")
+          bell.className = "notifBtn notifBtnActive"
+        }
+      })
+      document.ws = webSocketBridge; /* for debugging */
+    })
+
+	</script>
 </body>
 </html>

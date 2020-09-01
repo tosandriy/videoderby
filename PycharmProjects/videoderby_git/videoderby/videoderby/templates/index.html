@@ -1,141 +1,214 @@
 {% extends 'main.html' %}
 {% block content %}
 {% load static %}
-	<section class="page">
-		<div class="slider slider-first">
-
-			{% for teaser in teasers %}
+<div class="slider slider-first" xmlns="http://www.w3.org/1999/html">
+		{% for teaser in teasers %}
 
 			<div class="slide" id="slide_1">
 				<img class="slide_img" src="{{ teaser.background.url }}" alt="slide1">
+				<div class="gradient"></div>
 				<div class="slide_info">
-					<div class="top_slider_film_title">{{teaser.title}}</div>
+					<div class="top_slider_film_title">
+						<span>{{ teaser.title }}</span>
+						<div class="top_slider_info_right">
+							<a href="add_to_wish_list" class="wish_list"  data-href="/api/wishlist/{{teaser.movie.pk}}">{% if user in teaser.movie.movie_likes.all %} <img class="image_heart" src="{% static 'images/vectors/heart.png' %}" alt=""> {% else %} <img src="{% static 'images/vectors/heartW.png' %}" alt=""> {% endif %}</a>
+							<a href="add_to_watch_later" class="watch_later" data-href="/api/watchlater/{{teaser.movie.pk}}">{% if user in teaser.movie.watch_later.all %} <img class="image_heart" src="{% static 'images/vectors/add.png' %}" alt=""> {% else %} <img src="{% static 'images/vectors/addW.png' %}" alt=""> {% endif %}</a>
+						</div>
+					</div>
 					<div class="slider_buttons">
 						<div class="top_slider_info_left">
-							<button class="top_slider_button tr_sub trailer" id="trailer_button_slide_1">Смотреть трейлер</button>
-							<button class="top_slider_button tr_sub subscribe" id="subscribe_button_slide_1">Оформить подписку</button>
-						</div>
-						<div class="top_slider_info_right">
-							<button class="top_slider_button like" id="like_button_slide_1"><img src="{% static 'images/vectors/heartW.png' %}" alt=""></button>
-							<button class="top_slider_button add" id="add_button_slide_1"><img src="{% static 'images/vectors/addW.png' %}" alt=""></button>
+							<a href="/movie/{{teaser.movie.pk}}" class="top_slider_button tr_sub trailer" id="trailer_button_slide_1">Смотреть онлайн</a>
 						</div>
 					</div>
 				</div>
 			</div>
-
-			{% endfor %}
-
-		</div>
-		<h2 class="recomend_to_watch">Рекомендуем к просмотру:</h2>
-		<div class="line"></div>
-
-		<div class="slider slider-second">
-
-			{% for film in best_films %}
-			<a href="/movie/{{film.pk}}" class="film_slide">
-				<img src="{{ film.poster.url }}" alt="" width="135" height="200">
-				<span class="film_slide_name">{{ film.name }}</span>
-			</a>
-			{% endfor %}
-
+	{% endfor %}
 		</div>
 
-		<div class="line"></div>
+
+
+	<section class="page">
+
+		<div class="recomend_to_watch_container">
+			<h2 class="recomend_to_watch">Рекомендуем к просмотру:</h2>
+			<div class="slider slider-second">
+				{% for film in best_films %}
+				<a href="/movie/{{film.pk}}" class="film_slide">
+					<img src="{{ film.poster.url}}" alt="" width="135" height="200">
+					<span class="film_slide_name">{{ film.name }}</span>
+				</a>
+				{% endfor %}
+			</div>
+		</div>
 
 
 		<div class="main_films">
-			<div class="side_soon">
-				<div class="soon">Нов</div>
-				<div class="soon_films">
-					{% for film in new_films %}
-					<a href="/movie/{{film.pk}}"><img src="{{film.poster.url}}" alt="" height="125" width="85"></a>
-					{% endfor %}
-				</div>
-				<div class="line"></div>
-			</div>
 			<div class="films">
-				<form>
+				<form method="get">
 				<div class="films_filter">
 					<div class="filter_choose">
+						<input class="check_filter" type="checkbox" id="films_r" value="films" name="filter_choose" checked>
 						<label for="films_r">Фильмы</label>
-						<input class="radio_filter" type="radio" id="films_r" value="films" name="type" checked="">
+						<input class="check_filter" type="checkbox" id="serials_r" value="serials" name="filter_choose">
 						<label for="serials_r">Сериалы</label>
-						<input class="radio_filter" type="radio" id="serials_r" value="serials" name="type">
-						<span id="genre_span">Жанр:</span>
-						<select class="films_select" name="genre" id="genre">
-							<option value="" selected="">Любой</option>
-							{% for genre in genres %}
-							<option value="{{genre.0}}">{{genre.0}}</option>
-							{% endfor %}
-						</select>
-						<span id="year_span">Год выпуска:</span>
-						<select class="films_select" name="year" id="year">
-							<option value="">Любой</option>
-							{% for year in years %}
-							<option value="{{year}}">{{year}}</option>
-							{% endfor %}
-						</select>
+
+					</div>
+					<div class="filter_lists">
+						<div class="select_container genre">
+							<div id="genre_span">Жанр:</div>
+								<select name="genre" class="films_select" id="">
+									<option value="" disabled selected>Все</option>
+									{% for genre in genres %}
+										<option value="{{genre.0}}">{{genre.0}}</option>
+									{% endfor %}
+								</select>
+							</div>
+
+						<div class="select_container year">
+							<div id="genre_span">Год выпуска:</div>
+							<select name="year" class="films_select">
+									<option value="" disabled selected>Все</option>
+									{% for year in years %}
+										<option value="{{year}}">{{year}}</option>
+									{% endfor %}
+							</select>
+							</div>
+							<div class="select_list">
+							</div>
+							</div>
+						</div>
 					</div>
 					<div class="filter_sort">
-						<span>Сортировать по:</span>
-						<div class="sort_btns">
-							<button class="sort_btn">по популярности</button>
-							<button class="sort_btn">по рейтинку</button>
-							<button class="sort_btn">по отзывам</button>
-							<button class="sort_btn">по новизне</button>
-						</div>
+
 						<button class="clear_filter" type="submit" value="filter_search">Поиск</button>
 					</div>
 				</div>
 				</form>
-				<div class="line"></div>
 
 				<div class="slider film-pages">
-
+					<div class="films_container">
 					{% for film in films %}
-					<div class="main_film">
-
-						<div class="main_film_title"><span>{{ film.name }}</span><div><button><img src="{% static 'images/vectors/heart.png' %}" alt=""></button><button><img src="{% static 'images/vectors/add.png' %}" alt=""></button></div></div>
-						<div class="main_film_info">
-							<img src="{{film.poster.url}}" alt="" class="main_film_poster" width="170" height="270">
-							<div class="main_film_info_text">
-								<div class="film_descr">Год: <a href="#">{{film.year}}</a></div>
-								<div class="film_descr">
-									Страна:
-										{% for country in film.country %}
-											<a href="#">{{ country }}  </a>
-										{% endfor %}
+						<div class="main_film">
+							<div class="main_film_title">
+								<span>{{ film.name }}</span>
+								<div class="main_film_raiting positively">
+									<span>{{ film.rating }}</span>
 								</div>
-
-								<div class="film_descr">
-									Жанр:
-										{% for genre in film.genre %}
-											<a href="#">{{ genre }}  </a>
-										{% endfor %}
+							</div>
+							<div class="main_film_info">
+								<img src="{{film.poster.url}}" alt="" class="main_film_poster" width="170" height="270">
+								<div class="main_film_info_text">
+									<div class="film_descr">Год: <a href="#">{{film.year}}</a></div>
+									<div class="film_descr">Страна: {% for country in film.country %}
+																	{{ country }}
+																	{% endfor %}
+									</div>
+									<div class="film_descr">Жанр: {% for genre in film.genre %}
+																	{{ genre }}
+																	{% endfor %}</div>
+									<div class="film_descr">Режиссёр:
+																	{% for director in film.director %}
+																		{{ director }}
+																	{% endfor %}
+									</div>
+									<div class="film_descr">Длительность: {{ film.duration }} мин.</div>
+									<div class="film_descr">{{film.description|truncatechars:340}}</div>
 								</div>
-
-
-								<div class="film_descr">Режиссёр: <a href="#">{% for x in film.director %} {{x}} {% endfor %}</a></div>
-								<div class="film_descr">Длительность: {{ film.duration }} мин.</div>
-								<div class="film_descr">{{film.description|truncatechars:340}}</div>
+							</div>
+							<div class="main_film_btns">
+								<a class="top_slider_button tr_sub trailer" href="/movie/{{film.pk}}" id="main_film_tr_btn_1">Смотреть онлайн</a>
+								<div class="bottom_right_btns">
+								<a href="add_to_wish_list" class="wish_list"  data-href="/api/wishlist/{{film.pk}}">{% if user in film.movie_likes.all %} <img class="image_heart" src="{% static 'images/vectors/heart.png' %}" alt=""> {% else %} <img src="{% static 'images/vectors/heartW.png' %}" alt=""> {% endif %}</a>
+								<a href="add_to_watch_later" class="watch_later" data-href="/api/watchlater/{{film.pk}}">{% if user in film.watch_later.all %} <img class="image_heart" src="{% static 'images/vectors/add.png' %}" alt=""> {% else %} <img src="{% static 'images/vectors/addW.png' %}" alt=""> {% endif %}</a>
+								</div>
 							</div>
 						</div>
-						<div class="main_film_btns">
-							<a class="top_slider_button tr_sub trailer" href="/movie/{{film.pk}}" id="main_film_tr_btn_1">Смотреть трейлер</a>
-							<a class="top_slider_button tr_sub watch" href="/movie/{{film.pk}}" id="main_film_watch_btn_1">Смотреть онлайн</a>
-							<div class="main_film_raiting">
-								<div>Рейтинг: <span>{{ film.rating }}</span>/<span>10</span></div>
-<!--								<div class="stars"><svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 0L12.2451 6.90983H19.5106L13.6327 11.1803L15.8779 18.0902L10 13.8197L4.12215 18.0902L6.36729 11.1803L0.489435 6.90983H7.75486L10 0Z" fill="#CE0000"/></svg><svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 0L12.2451 6.90983H19.5106L13.6327 11.1803L15.8779 18.0902L10 13.8197L4.12215 18.0902L6.36729 11.1803L0.489435 6.90983H7.75486L10 0Z" fill="#CE0000"/></svg><svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 0L12.2451 6.90983H19.5106L13.6327 11.1803L15.8779 18.0902L10 13.8197L4.12215 18.0902L6.36729 11.1803L0.489435 6.90983H7.75486L10 0Z" fill="#CE0000"/></svg><svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 0L12.2451 6.90983H19.5106L13.6327 11.1803L15.8779 18.0902L10 13.8197L4.12215 18.0902L6.36729 11.1803L0.489435 6.90983H7.75486L10 0Z" fill="#CE0000"/></svg><svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 0L12.2451 6.90983H19.5106L13.6327 11.1803L15.8779 18.0902L10 13.8197L4.12215 18.0902L6.36729 11.1803L0.489435 6.90983H7.75486L10 0Z" fill="#CE0000"/></svg></div>-->
-							</div>
-						</div>
-						<div class="line"></div>
+					{% endfor %}
 
 					</div>
-								{% endfor %}
+				<div class="film-pages">
+					<div class="dots-list">
 
+						{% if first_page %}
+							<li><a href="/main/1" class="">1</a></li>
+							<li><a href="#" class="" style="pointer-events: none;">...</a></li>
+						{% endif %}
+
+						{% if prev_page_list %}
+							{% for page in prev_page_list %}
+								<li><a href="/main/{{page.number}}" class="">{{page.number}}</a></li>
+							{% endfor %}
+						{% endif %}
+
+							<li class="dot-active"><a href="#" style="pointer-events: none;" >{{cur_page.number}}</a></li>
+
+						{% if next_page_list %}
+							{% for page in next_page_list %}
+								<li><a href="/main/{{page.number}}" class="">{{page.number}}</a></li>
+							{% endfor %}
+						{% endif %}
+
+						{% if last_page %}
+							<li><a href="#" class="" style="pointer-events: none;">...</a></li>
+							<li><a href="/main/{{ last_page.number }}" class="">{{ last_page.number }}</a></li>
+						{% endif %}
+
+					</div>
+				</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	{% endblock content %}
+{% endblock content %}
+
+
+
+{% block script %}
+	$(".wish_list").click(function(e){
+		e.preventDefault()
+		var this_ = $(this)
+		var wish_list_url = this_.attr('data-href')
+		$.ajax({
+    		url: wish_list_url,
+    		method: "GET",
+    		data: {},
+    		success: function(data){
+				if (data.pressed){
+					errorMes(data.movie_name + ' добавлен в список "Избранное". Его можно найти в вашем профиле', "Успешно", "success")
+					$("img",this_).attr("src", "{% static 'images/vectors/heart.png' %}")
+									}
+				else{
+					errorMes(data.movie_name + ' удален из списка "Избранное"', "Успешно", "success")
+					$("img",this_).attr("src", "{% static 'images/vectors/heartW.png' %}")
+					}
+									},
+			error: function(error){
+				console.log(error)
+									}
+										})})
+
+
+	$(".watch_later").click(function(e){
+		e.preventDefault()
+		var this_ = $(this)
+		var watch_later_url = this_.attr('data-href')
+		$.ajax({
+    		url: watch_later_url,
+    		method: "GET",
+    		data: {},
+    		success: function(data){
+				if (data.pressed){
+					errorMes(data.movie_name + ' добавлен в список "Смотреть позже". Его можно будет найти в вашем профиле позже', "Успешно", "success")
+					$("img",this_).attr("src", "{% static 'images/vectors/add.png' %}")
+									}
+				else{
+					errorMes(data.movie_name + ' удален из списка "Смотреть позже".', "Успешно", "success")
+					$("img",this_).attr("src", "{% static 'images/vectors/addW.png' %}")
+					}
+									},
+			error: function(error){
+				console.log(error)
+									}
+										})})
+{% endblock script %}

@@ -1,5 +1,5 @@
 def value_parser_func():
-    from videoderby import models
+    from .. import models
     with open("videoderby/parser/result.txt",encoding='utf-8') as file:
         lines = file.readlines()
         for line in lines:

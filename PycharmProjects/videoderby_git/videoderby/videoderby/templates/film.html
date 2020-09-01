@@ -1,235 +1,333 @@
 {% extends 'main.html' %}
 {% block content %}
 {% load static %}
-<section class="page">
-	<div class="slider slider-first">
-
-			{% for teaser in teasers %}
-
-			<div class="slide" id="slide_1">
-				<img class="slide_img" src="{{ teaser.background.url }}" alt="slide1">
-				<div class="slide_info">
-					<div class="top_slider_film_title">{{teaser.title}}</div>
-					<div class="slider_buttons">
-						<div class="top_slider_info_left">
-							<button class="top_slider_button tr_sub trailer" id="trailer_button_slide_1">Смотреть трейлер</button>
-							<button class="top_slider_button tr_sub subscribe" id="subscribe_button_slide_1">Оформить подписку</button>
-						</div>
-						<div class="top_slider_info_right">
-							<button class="top_slider_button like" id="like_button_slide_1"><img src="{% static 'images/vectors/heartW.png' %}" alt=""></button>
-							<button class="top_slider_button add" id="add_button_slide_1"><img src="{% static 'images/vectors/addW.png' %}" alt=""></button>
-						</div>
-					</div>
+	<div class="film_top_banner">
+		<img class="film_top_banner_img" src="/media/videoderby/media/images/wideposter.png" alt="slide1">
+		<div class="gradient"></div>
+		<div class="film_top_banner_container">
+			
+			<div class="film_top_banner_info">
+				<div class="film_top_banner_title">Сколько треков нужно для хорошего ограбления?</div>
+				<div class="film_top_banner_buttons">
+					<button class="film_top_banner_button tr_sub trailer" id="trailer_film_top_banner_button">Смотреть трейлер</button>
+					<button class="film_top_banner_button tr_sub subscribe" id="online_film_top_banner_button">Смотреть онлайн</button>
 				</div>
+				<img src="images/vectors/age.png" alt="" class="film_age">
 			</div>
-
-			{% endfor %}
-
 		</div>
+	</div>
+	<section class="page">
+		
 
 		<div class="film_info">
-			<button class="film_like"><img src="videoderby/static/images/vectors/heart.png" alt=""></button>
-			<button class="film_add"><img src="videoderby/static/images/vectors/add.png" alt=""></button>
+			<div class="film_rating positively">{{ movie.rating }}</div>
+			<div class="poster_btns">
+				<img src="{{ movie.poster.url }}" alt="" class="film_info_img" width="270" height="405">
+				<div class="like_add">
+					<button class="film_like"><img src="images/vectors/heartW.png" alt=""></button>
+					<button class="film_add"><img src="images/vectors/addW.png" alt=""></button>
 
-			<img src="{{movie.poster.url}}" alt="" class="film_info_img" width="270" height="405">
+				</div>
+			</div>
+			
 			<div class="film_info_text">
 				<div class="film_desrc film_name">{{movie.name}}</div>
 				<div class="film_desrc film_year">{{movie.year}}</div>
 				<div class="film_desrc">Жанр: <span>{% for genre in movie.genre %} {{ genre }} {% endfor %}</span></div>
 				<div class="film_desrc">Страна: <span>{% for country in movie.country %} {{ country }} {% endfor %}</span></div>
-				<div class="film_desrc">Продолжительность: <span>{{ movie.duration }} мин.</span></div>
+				<div class="film_desrc">Продолжительность: <span>{{ movie.duration }} мин</span></div>
 				<div class="film_desrc">Режиссёр: <span>{% for director in movie.director %} {{ director }} {% endfor %}</span></div>
 				<div class="film_desrc">Композитор: <span>{% for compositor in movie.compositor %} {{ compositor }} {% endfor %}</span></div>
-				<div class="film_desrc">В главных ролях: <span>{% for actor in movie.actors %} {{ actor }} {% endfor %}</span></div>
+				<div class="film_desrc">В главных ролях: <span>{% for actor in main_actors %} {{ actor }} {% endfor %}</span></div>
 			</div>
 				
-			<div class="film_rating">Рейтинг фильма:  <span class="film_rating_num">{{ movie.rating }}</span> / <span>10</span></div>
 		</div>
-
-		<div class="film_description">
+		<div class="film_description" id="overview">
+			<h2>Описание</h2>
 			<div class="film_description_text">
-				<h2 class="film_description_title">Описание:</h2>
 				<p>
 					{{ movie.description }}
 				</p>
 			</div>
-
 		</div>
+			
+		<div class="film_trailer">
+				<div class="film_player">
 
-		<div class="film_player">
-			<div id="kinoplayertop" data-kinopoisk="{{movie.kp_id}}" data-player="videocdn,bazon,iframe" data-bg="#ff1000" data-button="videocdn: Смотреть онлайн, bazon: Плеер №2, iframe: Плеер №3"></div>
-			<script src="//kinoplayer.top/top.js"></script>
+			<div id="bazakinoPlayer"></div>
+			<iframe src="https://83.tvmovies.in/L9uhSzxDsF5B?kp_id={{movie.kp_id}}" width="1000" height="500px" frameborder="0" allowfullscreen></iframe>
 		</div>
-
-		<div class="film_frames">
-			<h2 class="film_frames_title">Кадры из фильма:</h2>
-			<div class="slider film_frames_slider">
-				{% for photo in movie.gallery.all %}
-				<div><img src="{{ photo.image.url }}" alt="" class="slider_frame"></div>
-				{% endfor %}
 			</div>
-		</div>
 
-		<div class="film_roles">
-			<div class="tab_nav">
-				<button onclick="openTab(event,'actors')" class="tabBtn button_tab_active">Актёры</button>
-				<button onclick="openTab(event,'makers')" class="tabBtn">Создатели</button>
+		<div  id="scenes">
+			<h2>Кадры</h2>
+				<div class="film_frames" style="width: 1000px;">
+					<div class="slider film_frames_slider">
+						{% for photo in movie.gallery.all %}
+							<div><img src="{{ photo.image.url }}" alt="" class="slider_frame"></div>
+						{% endfor %}
+					</div>
+				</div>
 			</div>
-			<div class="tab" id="actors">
+		<div class="actors_container">	
+			<h2>Актеры</h2>
+			<div id="actors"> 
 				{% for actor in movie.actors %}
 					<div class="role"><div class="role_name">{{actor}}</div></div>
 				{% endfor %}
 			</div>
-			<div class="tab" id="makers" style="display:none">
-				{% for person in movie.director %}
-					<div class="role"><div class="role_name">{{ person }}</div></div>
-					{% endfor %}
-				{% for person in movie.compositor %}
-					<div class="role"><div class="role_name">{{ person }}</div></div>
-					{% endfor %}
-			</div>
-		</div>
-
-
-
-		<div class="send_review">
-			<h2 class="send_review_title">Оставить отзыв:</h2>
-			<form method="POST" action="" class="review_pole">
-				<div class="balls">
-					<div class="stars">
-						<button class="review_star"><svg width="40" height="38" viewBox="0 0 40 38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 0L24.7148 14.5106H39.9722L27.6287 23.4787L32.3435 37.9894L20 29.0213L7.65651 37.9894L12.3713 23.4787L0.027813 14.5106H15.2852L20 0Z" fill="#CE0000"/></svg></button>
-						<button class="review_star"><svg width="40" height="38" viewBox="0 0 40 38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 0L24.7148 14.5106H39.9722L27.6287 23.4787L32.3435 37.9894L20 29.0213L7.65651 37.9894L12.3713 23.4787L0.027813 14.5106H15.2852L20 0Z" fill="#CE0000"/></svg></button>
-						<button class="review_star"><svg width="40" height="38" viewBox="0 0 40 38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 0L24.7148 14.5106H39.9722L27.6287 23.4787L32.3435 37.9894L20 29.0213L7.65651 37.9894L12.3713 23.4787L0.027813 14.5106H15.2852L20 0Z" fill="#CE0000"/></svg></button>
-						<button class="review_star"><svg width="40" height="38" viewBox="0 0 40 38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 0L24.7148 14.5106H39.9722L27.6287 23.4787L32.3435 37.9894L20 29.0213L7.65651 37.9894L12.3713 23.4787L0.027813 14.5106H15.2852L20 0Z" fill="#CE0000"/></svg></button>
-						<button class="review_star"><svg width="40" height="38" viewBox="0 0 40 38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 0L24.7148 14.5106H39.9722L27.6287 23.4787L32.3435 37.9894L20 29.0213L7.65651 37.9894L12.3713 23.4787L0.027813 14.5106H15.2852L20 0Z" fill="#848484"/></svg></button>
-					</div>
-					<div class="mid_stars">Средняя оценка пользователей: <span>4.2</span> / <span>18 голосов</span></div>
-				</div>
-
-				<textarea name="comment_text" id="" placeholder="Введите текст..."></textarea>
-				<div class="go">
-					<button><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 10C18.2618 10.0022 16.5953 10.6937 15.3662 11.9228C14.1371 13.152 13.4456 14.8184 13.4434 16.5567H16.7767C16.7767 14.7783 18.2234 13.3333 20 13.3333C21.7767 13.3333 23.2234 14.7783 23.2234 16.5567C23.2234 17.5533 22.4217 18.2767 21.1967 19.2667C20.7965 19.5802 20.4121 19.9134 20.045 20.265C18.3817 21.9267 18.3334 23.6917 18.3334 23.8883V25H21.6667L21.665 23.945C21.6667 23.9183 21.72 23.3017 22.4 22.6233C22.65 22.3733 22.965 22.1233 23.2917 21.86C24.59 20.8083 26.555 19.22 26.555 16.5567C26.5537 14.8184 25.8627 13.1517 24.6337 11.9225C23.4048 10.6932 21.7383 10.0018 20 10ZM18.3334 26.6667H21.6667V30H18.3334V26.6667Z" fill="black"/><path d="M19.9997 3.33325C10.8097 3.33325 3.33301 10.8099 3.33301 19.9999C3.33301 29.1899 10.8097 36.6666 19.9997 36.6666C29.1897 36.6666 36.6663 29.1899 36.6663 19.9999C36.6663 10.8099 29.1897 3.33325 19.9997 3.33325ZM19.9997 33.3333C12.648 33.3333 6.66634 27.3516 6.66634 19.9999C6.66634 12.6483 12.648 6.66659 19.9997 6.66659C27.3513 6.66659 33.333 12.6483 33.333 19.9999C33.333 27.3516 27.3513 33.3333 19.9997 33.3333Z" fill="black"/></svg></button>
-					<input type="submit" placeholder="Опубликовать">
-				</div>
-			</form>
 		</div>
 
 		<div class="all_reviews">
 			<h2 class="all_reviews_title">Все отзывы:</h2>
+			{% if comments %}
+			{% for comment in comments %}
 			<div class="review_content">
 				<div class="review review_bad">
 					<div class="review_head">
 						<div class="review_user">
-							<img src="images/ava.png" alt="">
+							<img width="60" height="60" src="{{comment.user.profile.picture.url}}" alt="">
 							<div class="review_user_info">
-								<div class="review_user_nick">Понасёнок</div>
-								<div class="review_user_review_num">9 отзывов</div>
+								<div class="review_user_nick">{{ comment.user.username }}</div>
+								<div class="review_user_review_num">{{comment.user.comments.count}} отзывов</div>
+								<div class="review_date">{{ comment.published|date:'Y-m-d H:i' }}</div>
 							</div>
 						</div>
-						<div class="review_rating">Оценка: <span>2.2</span> / <span>5.0</span></div>
-						<div class="review_date">Опубликовано 9 мая 1945 <br>в 23:01</div>
-					</div>
-					<div class="line"></div>
-					<div class="review_t">
-						<h2 class="review_h">Я вас уничтожу. И Антона тоже!</h2>
-						<p class="review_text">Всей швали, моих критиков, моих завистников, вы думаете, что с человеком, который вот до такой степени точно, исследует тему, можно спорить? Вы думаете, что я вас не переиграю, что я вас не уничтожу? Я вас уничтожу.</p>
-						<p class="review_text">Фильм года говорили они, 93% на гнилых помидорах говорили они... Бездарный трэшак без сюжета, с кучей ляпов, допущений и условностей, вот что я увидел, и теперь люто, бешено горю и от самого фильма, и от того, каким местом его смотрели чудо критики, популярные видеоблогеры и прочие, очевидно слепые люди. Но обо всём по порядку.</p>
-						<h2 class="review_h">Щас как ёбну Lorem Ipsum</h2>
-						<p class="review_text">Фильм года говорили они, 93% на гнилых помидорах говорили они... Бездарный трэшак без сюжета, с кучей ляпов, допущений и условностей, вот что я увидел, и теперь люто, бешено горю и от самого фильма, и от того, каким местом его смотрели чудо критики, популярные видеоблогеры и прочие, очевидно слепые люди. Но обо всём по порядку.</p>
-					</div>
-					<div class="review_footer">
-						<button class="show_all_review">показать весь отзыв</button>
-						<div class="review_answ">Ответы: 12</div>
-						<button class="review_comment">Комментировать<svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 0.166504H2C1.17275 0.166504 0.5 0.689754 0.5 1.33317V11.8332L3.5 9.49984H14C14.8273 9.49984 15.5 8.97659 15.5 8.33317V1.33317C15.5 0.689754 14.8273 0.166504 14 0.166504Z" fill="#848484"/></svg></button>
-					</div>
-				</div>
-				<div class="review_ocenka">
-					<button class="review_report">Пожаловаться</button>
-					<button class="palec palec_vverh"><svg width="102" height="106" viewBox="0 0 102 106" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M98.4678 55.755C100.601 52.9366 101.781 49.4835 101.781 45.8907C101.781 40.1905 98.5947 34.795 93.4658 31.7862C92.1454 31.0117 90.6421 30.6041 89.1113 30.6056H58.668L59.4297 15.003C59.6074 11.2325 58.2744 7.65244 55.6846 4.92294C54.4136 3.5776 52.8802 2.50719 51.1792 1.77788C49.4782 1.04856 47.6457 0.675825 45.7949 0.682711C39.1934 0.682711 33.3535 5.12607 31.6016 11.4864L20.6963 50.9688H20.6582V105.305H80.6182C81.7861 105.305 82.9287 105.076 83.9824 104.619C90.0254 102.042 93.9229 96.1387 93.9229 89.588C93.9229 87.9884 93.6943 86.4141 93.2373 84.8907C95.3701 82.0723 96.5508 78.6192 96.5508 75.0265C96.5508 73.4268 96.3223 71.8526 95.8652 70.3292C97.998 67.5108 99.1787 64.0577 99.1787 60.4649C99.1533 58.8653 98.9248 57.2784 98.4678 55.755ZM0.21875 55.0313V101.242C0.21875 103.489 2.03418 105.305 4.28125 105.305H12.5332V50.9688H4.28125C2.03418 50.9688 0.21875 52.7843 0.21875 55.0313Z" fill="#62C041"/></svg></button>
-					<span class="review_up">+ 69</span>
-					<div class="line"></div>
-					<span class="review_down">- 12</span>
-					<button class="palec palec_vniz"><svg width="102" height="106" viewBox="0 0 102 106" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M98.4678 50.2451C98.9248 48.7217 99.1533 47.1475 99.1533 45.5479C99.1533 41.9551 97.9727 38.502 95.8398 35.6836C96.2969 34.1602 96.5254 32.5859 96.5254 30.9863C96.5254 27.3936 95.3447 23.9404 93.2119 21.1221C93.6689 19.5986 93.8975 18.0244 93.8975 16.4248C93.8975 9.87402 90 3.9707 83.957 1.39355C82.8948 0.935617 81.7495 0.702217 80.5928 0.708008H20.6582V55.0439H20.6963L31.5889 94.501C33.3408 100.861 39.1807 105.305 45.7822 105.305C49.5527 105.305 53.0693 103.807 55.6719 101.064C58.2744 98.335 59.6074 94.7549 59.417 90.9844L58.6553 75.3818H89.1113C90.6475 75.3818 92.1455 74.9756 93.4658 74.2012C98.5947 71.2178 101.781 65.8096 101.781 60.1094C101.781 56.5166 100.601 53.0635 98.4678 50.2451ZM0.21875 4.75781V50.9688C0.21875 53.2158 2.03418 55.0312 4.28125 55.0312H12.5332V0.695312H4.28125C2.03418 0.695312 0.21875 2.51074 0.21875 4.75781Z" fill="#CE0000"/></svg></button>
-				</div>
-			</div>
+						<div class="review_ocenka">
 
-			<div class="line"></div>
+						{% if user == comment.user %}
+						<a href="#" style="pointer-events: none;" data-id="{{comment.pk}}/like" data-pressed="{% if user in comment.total_likes.all %}True{% else%}{% endif %}" data-href="{{ comment.get_api_like_url }}" data-likes="{{ comment.total_likes.count }}" class="palec palec_vverh">
+							<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8.75" width="2.5" height="20" fill="#62C041"/><rect x="20" y="8.75" width="2.5" height="20" transform="rotate(90 20 8.75)" fill="#62C041"/></svg></button>
+						</a>
+							<span class="review_up" data-id="{{comment.pk}}/like">{{ comment.total_likes.count }}</span>
+							<a href="#" style="pointer-events: none;" data-id="{{comment.pk}}/dislike" data-pressed="{% if user in comment.total_dislikes.all %}True{% else %}{% endif %}" data-href="{{ comment.get_api_dislike_url }}" data-likes="{{ comment.total_dislikes.count }}" class="palec palec_vniz">
+								<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="8.75" width="2.5" height="20" transform="rotate(90 20 8.75)" fill="#CE0000"/></svg>
+							</a>
+							<span class="review_down" data-id="{{comment.pk}}/dislike">{{ comment.total_dislikes.count }}</span>
+						{% else %}
 
-			<div class="review_content">
-				<div class="review review_good">
-					<div class="review_head">
-						<div class="review_user">
-							<img src="images/ava.png" alt="">
-							<div class="review_user_info">
-								<div class="review_user_nick">Понасёнок</div>
-								<div class="review_user_review_num">9 отзывов</div>
-							</div>
+						<a href="{{comment.pk}}/like" data-id="{{comment.pk}}/like" data-pressed="{% if user in comment.total_likes.all %}True{% else%}{% endif %}" data-href="{{ comment.get_api_like_url }}" data-likes="{{ comment.total_likes.count }}" class="palec palec_vverh">
+							<svg width="20" height="21" viewBox="0 0 102 106" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M98.4678 55.755C100.601 52.9366 101.781 49.4835 101.781 45.8907C101.781 40.1905 98.5947 34.795 93.4658 31.7862C92.1454 31.0117 90.6421 30.6041 89.1113 30.6056H58.668L59.4297 15.003C59.6074 11.2325 58.2744 7.65244 55.6846 4.92294C54.4136 3.5776 52.8802 2.50719 51.1792 1.77788C49.4782 1.04856 47.6457 0.675825 45.7949 0.682711C39.1934 0.682711 33.3535 5.12607 31.6016 11.4864L20.6963 50.9688H20.6582V105.305H80.6182C81.7861 105.305 82.9287 105.076 83.9824 104.619C90.0254 102.042 93.9229 96.1387 93.9229 89.588C93.9229 87.9884 93.6943 86.4141 93.2373 84.8907C95.3701 82.0723 96.5508 78.6192 96.5508 75.0265C96.5508 73.4268 96.3223 71.8526 95.8652 70.3292C97.998 67.5108 99.1787 64.0577 99.1787 60.4649C99.1533 58.8653 98.9248 57.2784 98.4678 55.755ZM0.21875 55.0313V101.242C0.21875 103.489 2.03418 105.305 4.28125 105.305H12.5332V50.9688H4.28125C2.03418 50.9688 0.21875 52.7843 0.21875 55.0313Z" fill="#62C041"/></svg>
+						</a>
+							<span class="review_up" data-id="{{comment.pk}}/like">{{ comment.total_likes.count }}</span>
+							<a href="{{comment.pk}}/dislike" data-id="{{comment.pk}}/dislike" data-pressed="{% if user in comment.total_dislikes.all %}True{% else %}{% endif %}" data-href="{{ comment.get_api_dislike_url }}" data-likes="{{ comment.total_dislikes.count }}" class="palec palec_vniz">
+								<svg width="20" height="21" viewBox="0 0 102 106" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M98.4678 50.2451C98.9248 48.7217 99.1533 47.1475 99.1533 45.5479C99.1533 41.9551 97.9727 38.502 95.8398 35.6836C96.2969 34.1602 96.5254 32.5859 96.5254 30.9863C96.5254 27.3936 95.3447 23.9404 93.2119 21.1221C93.6689 19.5986 93.8975 18.0244 93.8975 16.4248C93.8975 9.87402 90 3.9707 83.957 1.39355C82.8948 0.935617 81.7495 0.702217 80.5928 0.708008H20.6582V55.0439H20.6963L31.5889 94.501C33.3408 100.861 39.1807 105.305 45.7822 105.305C49.5527 105.305 53.0693 103.807 55.6719 101.064C58.2744 98.335 59.6074 94.7549 59.417 90.9844L58.6553 75.3818H89.1113C90.6475 75.3818 92.1455 74.9756 93.4658 74.2012C98.5947 71.2178 101.781 65.8096 101.781 60.1094C101.781 56.5166 100.601 53.0635 98.4678 50.2451ZM0.21875 4.75781V50.9688C0.21875 53.2158 2.03418 55.0312 4.28125 55.0312H12.5332V0.695312H4.28125C2.03418 0.695312 0.21875 2.51074 0.21875 4.75781Z" fill="#CE0000"/></svg>
+							</a>
+							<span class="review_down" data-id="{{comment.pk}}/dislike">{{ comment.total_dislikes.count }}</span>
+						{% endif %}
 						</div>
-						<div class="review_rating">Оценка: <span>2.2</span> / <span>5.0</span></div>
-						<div class="review_date">Опубликовано 9 мая 1945 <br>в 23:01</div>
 					</div>
-					<div class="line"></div>
+
+					{% if user == comment.user %}
+					<a class="delete_users_comment" href="#" data-href="{{comment.pk}}/delete">Удалить</a>
+					{% endif %}
 					<div class="review_t">
-						<h2 class="review_h">Я вас уничтожу. И Антона тоже!</h2>
-						<p class="review_text">Всей швали, моих критиков, моих завистников, вы думаете, что с человеком, который вот до такой степени точно, исследует тему, можно спорить? Вы думаете, что я вас не переиграю, что я вас не уничтожу? Я вас уничтожу.</p>
-						<p class="review_text">Фильм года говорили они, 93% на гнилых помидорах говорили они... Бездарный трэшак без сюжета, с кучей ляпов, допущений и условностей, вот что я увидел, и теперь люто, бешено горю и от самого фильма, и от того, каким местом его смотрели чудо критики, популярные видеоблогеры и прочие, очевидно слепые люди. Но обо всём по порядку.</p>
-						<h2 class="review_h">Щас как ёбну Lorem Ipsum</h2>
-						<p class="review_text">Фильм года говорили они, 93% на гнилых помидорах говорили они... Бездарный трэшак без сюжета, с кучей ляпов, допущений и условностей, вот что я увидел, и теперь люто, бешено горю и от самого фильма, и от того, каким местом его смотрели чудо критики, популярные видеоблогеры и прочие, очевидно слепые люди. Но обо всём по порядку.</p>
-					</div>
+                            {% if comment.comment_header %}
+						<h2 class="review_h">{{ comment.comment_header }}</h2>
+                            {% endif %}
+                        <p class="review_text">{{ comment.comment }}</p>
+                    </div>
+					<div class="freespace"></div>
 					<div class="review_footer">
 						<button class="show_all_review">показать весь отзыв</button>
-						<div class="review_answ">Ответы: 12</div>
-						<button class="review_comment">Комментировать<svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 0.166504H2C1.17275 0.166504 0.5 0.689754 0.5 1.33317V11.8332L3.5 9.49984H14C14.8273 9.49984 15.5 8.97659 15.5 8.33317V1.33317C15.5 0.689754 14.8273 0.166504 14 0.166504Z" fill="#848484"/></svg></button>
+						<button class="review_report">Пожаловаться</button>
 					</div>
-				</div>
-				<div class="review_ocenka">
-					<button class="review_report">Пожаловаться</button>
-					<button class="palec palec_vverh"><svg width="102" height="106" viewBox="0 0 102 106" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M98.4678 55.755C100.601 52.9366 101.781 49.4835 101.781 45.8907C101.781 40.1905 98.5947 34.795 93.4658 31.7862C92.1454 31.0117 90.6421 30.6041 89.1113 30.6056H58.668L59.4297 15.003C59.6074 11.2325 58.2744 7.65244 55.6846 4.92294C54.4136 3.5776 52.8802 2.50719 51.1792 1.77788C49.4782 1.04856 47.6457 0.675825 45.7949 0.682711C39.1934 0.682711 33.3535 5.12607 31.6016 11.4864L20.6963 50.9688H20.6582V105.305H80.6182C81.7861 105.305 82.9287 105.076 83.9824 104.619C90.0254 102.042 93.9229 96.1387 93.9229 89.588C93.9229 87.9884 93.6943 86.4141 93.2373 84.8907C95.3701 82.0723 96.5508 78.6192 96.5508 75.0265C96.5508 73.4268 96.3223 71.8526 95.8652 70.3292C97.998 67.5108 99.1787 64.0577 99.1787 60.4649C99.1533 58.8653 98.9248 57.2784 98.4678 55.755ZM0.21875 55.0313V101.242C0.21875 103.489 2.03418 105.305 4.28125 105.305H12.5332V50.9688H4.28125C2.03418 50.9688 0.21875 52.7843 0.21875 55.0313Z" fill="#62C041"/></svg></button>
-					<span class="review_up">+ 69</span>
-					<div class="line"></div>
-					<span class="review_down">- 12</span>
-					<button class="palec palec_vniz"><svg width="102" height="106" viewBox="0 0 102 106" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M98.4678 50.2451C98.9248 48.7217 99.1533 47.1475 99.1533 45.5479C99.1533 41.9551 97.9727 38.502 95.8398 35.6836C96.2969 34.1602 96.5254 32.5859 96.5254 30.9863C96.5254 27.3936 95.3447 23.9404 93.2119 21.1221C93.6689 19.5986 93.8975 18.0244 93.8975 16.4248C93.8975 9.87402 90 3.9707 83.957 1.39355C82.8948 0.935617 81.7495 0.702217 80.5928 0.708008H20.6582V55.0439H20.6963L31.5889 94.501C33.3408 100.861 39.1807 105.305 45.7822 105.305C49.5527 105.305 53.0693 103.807 55.6719 101.064C58.2744 98.335 59.6074 94.7549 59.417 90.9844L58.6553 75.3818H89.1113C90.6475 75.3818 92.1455 74.9756 93.4658 74.2012C98.5947 71.2178 101.781 65.8096 101.781 60.1094C101.781 56.5166 100.601 53.0635 98.4678 50.2451ZM0.21875 4.75781V50.9688C0.21875 53.2158 2.03418 55.0312 4.28125 55.0312H12.5332V0.695312H4.28125C2.03418 0.695312 0.21875 2.51074 0.21875 4.75781Z" fill="#CE0000"/></svg></button>
 				</div>
 			</div>
-
-			<div class="line"></div>
-
-			<div class="review_content">
-				<div class="review review_neutral">
-					<div class="review_head">
-						<div class="review_user">
-							<img src="images/ava.png" alt="">
-							<div class="review_user_info">
-								<div class="review_user_nick">Понасёнок</div>
-								<div class="review_user_review_num">9 отзывов</div>
-							</div>
-						</div>
-						<div class="review_rating">Оценка: <span>2.2</span> / <span>5.0</span></div>
-						<div class="review_date">Опубликовано 9 мая 1945 <br>в 23:01</div>
-					</div>
-					<div class="line"></div>
-					<div class="review_t">
-						<h2 class="review_h">Я вас уничтожу. И Антона тоже!</h2>
-						<p class="review_text">Всей швали, моих критиков, моих завистников, вы думаете, что с человеком, который вот до такой степени точно, исследует тему, можно спорить? Вы думаете, что я вас не переиграю, что я вас не уничтожу? Я вас уничтожу.</p>
-						<p class="review_text">Фильм года говорили они, 93% на гнилых помидорах говорили они... Бездарный трэшак без сюжета, с кучей ляпов, допущений и условностей, вот что я увидел, и теперь люто, бешено горю и от самого фильма, и от того, каким местом его смотрели чудо критики, популярные видеоблогеры и прочие, очевидно слепые люди. Но обо всём по порядку.</p>
-						<h2 class="review_h">Щас как ёбну Lorem Ipsum</h2>
-						<p class="review_text">Фильм года говорили они, 93% на гнилых помидорах говорили они... Бездарный трэшак без сюжета, с кучей ляпов, допущений и условностей, вот что я увидел, и теперь люто, бешено горю и от самого фильма, и от того, каким местом его смотрели чудо критики, популярные видеоблогеры и прочие, очевидно слепые люди. Но обо всём по порядку.</p>
-					</div>
-					<div class="review_footer">
-						<button class="show_all_review">показать весь отзыв</button>
-						<div class="review_answ">Ответы: 12</div>
-						<button class="review_comment">Комментировать<svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 0.166504H2C1.17275 0.166504 0.5 0.689754 0.5 1.33317V11.8332L3.5 9.49984H14C14.8273 9.49984 15.5 8.97659 15.5 8.33317V1.33317C15.5 0.689754 14.8273 0.166504 14 0.166504Z" fill="#848484"/></svg></button>
-					</div>
-				</div>
-				<div class="review_ocenka">
-					<button class="review_report">Пожаловаться</button>
-					<button class="palec palec_vverh"><svg width="102" height="106" viewBox="0 0 102 106" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M98.4678 55.755C100.601 52.9366 101.781 49.4835 101.781 45.8907C101.781 40.1905 98.5947 34.795 93.4658 31.7862C92.1454 31.0117 90.6421 30.6041 89.1113 30.6056H58.668L59.4297 15.003C59.6074 11.2325 58.2744 7.65244 55.6846 4.92294C54.4136 3.5776 52.8802 2.50719 51.1792 1.77788C49.4782 1.04856 47.6457 0.675825 45.7949 0.682711C39.1934 0.682711 33.3535 5.12607 31.6016 11.4864L20.6963 50.9688H20.6582V105.305H80.6182C81.7861 105.305 82.9287 105.076 83.9824 104.619C90.0254 102.042 93.9229 96.1387 93.9229 89.588C93.9229 87.9884 93.6943 86.4141 93.2373 84.8907C95.3701 82.0723 96.5508 78.6192 96.5508 75.0265C96.5508 73.4268 96.3223 71.8526 95.8652 70.3292C97.998 67.5108 99.1787 64.0577 99.1787 60.4649C99.1533 58.8653 98.9248 57.2784 98.4678 55.755ZM0.21875 55.0313V101.242C0.21875 103.489 2.03418 105.305 4.28125 105.305H12.5332V50.9688H4.28125C2.03418 50.9688 0.21875 52.7843 0.21875 55.0313Z" fill="#62C041"/></svg></button>
-					<span class="review_up">+ 69</span>
-					<div class="line"></div>
-					<span class="review_down">- 12</span>
-					<button class="palec palec_vniz"><svg width="102" height="106" viewBox="0 0 102 106" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M98.4678 50.2451C98.9248 48.7217 99.1533 47.1475 99.1533 45.5479C99.1533 41.9551 97.9727 38.502 95.8398 35.6836C96.2969 34.1602 96.5254 32.5859 96.5254 30.9863C96.5254 27.3936 95.3447 23.9404 93.2119 21.1221C93.6689 19.5986 93.8975 18.0244 93.8975 16.4248C93.8975 9.87402 90 3.9707 83.957 1.39355C82.8948 0.935617 81.7495 0.702217 80.5928 0.708008H20.6582V55.0439H20.6963L31.5889 94.501C33.3408 100.861 39.1807 105.305 45.7822 105.305C49.5527 105.305 53.0693 103.807 55.6719 101.064C58.2744 98.335 59.6074 94.7549 59.417 90.9844L58.6553 75.3818H89.1113C90.6475 75.3818 92.1455 74.9756 93.4658 74.2012C98.5947 71.2178 101.781 65.8096 101.781 60.1094C101.781 56.5166 100.601 53.0635 98.4678 50.2451ZM0.21875 4.75781V50.9688C0.21875 53.2158 2.03418 55.0312 4.28125 55.0312H12.5332V0.695312H4.28125C2.03418 0.695312 0.21875 2.51074 0.21875 4.75781Z" fill="#CE0000"/></svg></button>
-				</div>
+            {% endfor %}
+			{% else %}
+			<div class="none">
+				<p>Здесь пусто! :(</p>
 			</div>
+			{% endif %}
+
+
+
+
+		</div>
+		<div class="send_review">
+			<h2 class="send_review_title">Оставить отзыв:</h2>
+			<form method="POST" action="" class="review_pole" id="comment_form">
+				{% csrf_token %}
+				<div class="balls">
+					<div style="margin-right: 20px;">Оценка:</div>
+					<div class="stars">
+						<div class="review_star"></div>
+					</div>
+				</div>
+				<input type="text" name="comment_header" class="com_title" placeholder="Заголовок" required>
+				<textarea name="comment" id="" placeholder="Введите текст..." required></textarea>
+				<div class="go">
+					<input type="submit" class="comment_submit" placeholder="Опубликовать">
+					<button><svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 10C18.2618 10.0022 16.5953 10.6937 15.3662 11.9228C14.1371 13.152 13.4456 14.8184 13.4434 16.5567H16.7767C16.7767 14.7783 18.2234 13.3333 20 13.3333C21.7767 13.3333 23.2234 14.7783 23.2234 16.5567C23.2234 17.5533 22.4217 18.2767 21.1967 19.2667C20.7965 19.5802 20.4121 19.9134 20.045 20.265C18.3817 21.9267 18.3334 23.6917 18.3334 23.8883V25H21.6667L21.665 23.945C21.6667 23.9183 21.72 23.3017 22.4 22.6233C22.65 22.3733 22.965 22.1233 23.2917 21.86C24.59 20.8083 26.555 19.22 26.555 16.5567C26.5537 14.8184 25.8627 13.1517 24.6337 11.9225C23.4048 10.6932 21.7383 10.0018 20 10ZM18.3334 26.6667H21.6667V30H18.3334V26.6667Z" fill="white"/><path d="M19.9997 3.33325C10.8097 3.33325 3.33301 10.8099 3.33301 19.9999C3.33301 29.1899 10.8097 36.6666 19.9997 36.6666C29.1897 36.6666 36.6663 29.1899 36.6663 19.9999C36.6663 10.8099 29.1897 3.33325 19.9997 3.33325ZM19.9997 33.3333C12.648 33.3333 6.66634 27.3516 6.66634 19.9999C6.66634 12.6483 12.648 6.66659 19.9997 6.66659C27.3513 6.66659 33.333 12.6483 33.333 19.9999C33.333 27.3516 27.3513 33.3333 19.9997 33.3333Z" fill="white"/></svg></button>
+				</div>
+			</form>
 		</div>
 	</section>
 {% endblock content %}
+
+{% block script %}
+
+	var show = 0;
+	$(document).on('focus', '.review_pole', function() {
+		if (!show){
+		errorMes("Просим вас не использовать ругательства в комментариях и писать только обдуманные комментарии!", "Прочитайте", "info")
+		show = 1
+					}
+})
+
+
+    function updateText(btn,newCount){
+        btn.text(newCount)
+    }
+
+    $(".palec").click(function(e){
+    e.preventDefault()
+    var this_ = $(this)
+    var likeUrl = this_.attr("data-href")
+    $.ajax({
+    url: likeUrl,
+    method: "GET",
+    data: {},
+    success: function(data){
+		var likeCount = parseInt($('a[data-id="' + data.comment_pk + '/like"]').attr("data-likes"))
+		var dislikeCount = parseInt($('a[data-id="' + data.comment_pk + '/dislike"]').attr("data-likes"))
+    	var pressedLike = $('a[data-id="' + data.comment_pk + '/like"]').attr("data-pressed")
+    	var pressedDislike = $('a[data-id="' + data.comment_pk + '/dislike"]').attr("data-pressed")
+        console.log(data)
+        var newLikes
+        var newDislikes
+        if (data.liked){
+            if (!!pressedLike){
+                newLikes = likeCount - 1
+                updateText($('.review_up[data-id="' + data.comment_pk + '/like"]'),newLikes)
+                $('a[data-id="' + data.comment_pk + '/like"]').attr("data-pressed", "")
+                $('a[data-id="' + data.comment_pk + '/like"]').attr("data-likes", likeCount - 1)
+                            }
+            else{
+                newLikes = likeCount + 1
+                updateText($('.review_up[data-id="' + data.comment_pk + '/like"]'),newLikes)
+                $('a[data-id="' + data.comment_pk + '/like"]').attr("data-pressed", true)
+                $('a[data-id="' + data.comment_pk + '/like"]').attr("data-likes", likeCount + 1)
+                }
+            if (!!pressedDislike){
+                newDislikes = dislikeCount - 1
+                updateText($('.review_down[data-id="' + data.comment_pk + '/dislike"]'),newDislikes)
+                $('a[data-id="' + data.comment_pk + '/dislike"]').attr("data-pressed", "")
+                $('a[data-id="' + data.comment_pk + '/dislike"]').attr("data-likes",dislikeCount-1)
+                                }
+                        }
+        if (data.disliked){
+            if (!!pressedDislike){
+                newDislikes = dislikeCount - 1
+                updateText($('.review_down[data-id="' + data.comment_pk + '/dislike"]'),newDislikes)
+                $('a[data-id="' + data.comment_pk + '/dislike"]').attr("data-pressed", "")
+                $('a[data-id="' + data.comment_pk + '/dislike"]').attr("data-likes",dislikeCount-1)
+                                }
+            else{
+                newDislikes = dislikeCount + 1
+                updateText($('.review_down[data-id="' + data.comment_pk + '/dislike"]'),newDislikes)
+                $('a[data-id="' + data.comment_pk + '/dislike"]').attr("data-pressed", true)
+                $('a[data-id="' + data.comment_pk + '/dislike"]').attr("data-likes",dislikeCount+1)
+                }
+            if (!!pressedLike){
+                newLikes = likeCount - 1
+                updateText($('.review_up[data-id="' + data.comment_pk + '/like"]'),newLikes)
+                $('a[data-id="' + data.comment_pk + '/like"]').attr("data-pressed", "")
+                $('a[data-id="' + data.comment_pk + '/like"]').attr("data-likes", likeCount-1)
+                            }
+                        }
+                            },
+
+    error: function(error){
+    console.log(error)
+    console.log("error")
+    }
+    })
+});
+</script>
+<script>
+
+            $(".review_pole").submit(
+        function(event){
+            var score = $("input[name=score]").val()
+            var header = $("input[name=comment_header]").val()
+            var comment = $("textarea[name=comment]").val()
+            event.preventDefault()
+            if(!score || !header || !comment){
+                errorMes("Обязательно оставьте оценку фильму!", "Ой!","error")
+                                            }
+            else{
+                $.ajax({
+                    url: "/api/is_comment_unique/" + comment + "/{{movie.pk}}",
+                    method: "GET",
+                    data: {},
+                    success:
+                        function(data){
+                            if(data.is_unique){
+                                $.ajax({
+                                    url:"/movie/{{ movie.pk }}/",
+                                    method: "POST",
+                                    data: {
+                                        score: score,
+                                        comment_header: header,
+                                        comment: comment,
+                                        csrfmiddlewaretoken: $("input[name=csrfmiddlewaretoken]").val(),
+                                           },
+                                    success:
+                                    setTimeout(() => {
+
+
+                                    	$.ajax({
+                                    		url: "/api/comment/" + header + "/" + comment + "/",
+                                    		method: "GET",
+                                    		data: {},
+                                    		success:
+
+                                        function(dataa){
+                                            document.getElementById('comment_form').reset();
+                                            errorMes("Вы успешно оставили комментарий! Спасибо, что помогаете проекту своей активностью :)","Успешно","success")
+                                            $('.all_reviews').append('<div class="review_content"><div class="review review_bad"><div class="review_head"><div class="review_user"><img width="60" height="60" src="{{user.profile.picture.url}}" alt=""><div class="review_user_info"><div class="review_user_nick">{{ user.username }}</div><div class="review_user_review_num">{{user.comments.count|add:1}} отзывов</div><div class="review_date">' + dataa.date + '</div></div></div><div class="review_ocenka"><a href="#" data-id="' + dataa.comment_pk + '/like" style="pointer-events: none;" data-pressed="" data-href="' + dataa.datahref1 + '" data-likes="0" class="palec palec_vverh"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8.75" width="2.5" height="20" fill="#62C041"/><rect x="20" y="8.75" width="2.5" height="20" transform="rotate(90 20 8.75)" fill="#62C041"/></svg></a><span class="review_up" data-id="' + dataa.comment_pk + '/like">0</span><a href="#" style="pointer-events: none;" data-id="' + dataa.comment_pk + '/dislike" data-pressed="" data-href="' + data.datahref2 + '" data-likes="0" class="palec palec_vniz"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="8.75" width="2.5" height="20" transform="rotate(90 20 8.75)" fill="#CE0000"/></svg></a><span class="review_down" data-id="' + dataa.comment_pk + '/dislike">0</span></div></div><a class="delete_users_comment" href="#" data-href="' + dataa.comment_pk + '/delete">Удалить</a><div class="review_t"><h2 class="review_h">' + header + '</h2><p class="review_text">' + comment + '</p></div><div class="freespace"></div><div class="review_footer"><button class="show_all_review">показать весь отзыв</button><button class="review_report">Пожаловаться</button></div></div></div>')
+											if($("div.none")) { $("div.none").remove() }
+                                                       }
+                                                })
+                                                }, 100)
+                                        })
+                                               }
+                            else{
+                                 errorMes("Нельзя оставлять больше одного комментария на один и тот же фильм!", "Ой!", "error")
+                                 document.getElementById('comment_form').reset();
+                                 }
+                            }
+
+                        })}})
+</script>
+<script>
+
+$("body").on('click', ".delete_users_comment",
+	function(event) {
+		delete_url = $(".delete_users_comment").attr("data-href")
+	    event.preventDefault()
+	    $.ajax({
+	    	url: "/movie/{{movie.pk}}/" + delete_url,
+	    	method: "GET",
+	    	data: {},
+			success: function(data) {
+						$(".delete_users_comment").parent().remove()
+	    errorMes("Ваш комментарий успешно удален", "Успешно", "success")
+	    if($("div.review_bad").length == 0) {
+	    	$('.all_reviews').append("<div class='none'><p>Здесь пусто! :(</p></div>")
+	    									}
+							},
+			error: function(error) {
+			console.log("error")
+								}
+
+	    		})
+
+
+
+	                }
+								)
+
+{% endblock script %}
